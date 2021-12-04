@@ -1,0 +1,153 @@
+/* * {
+    border: 2px solid red;
+} */
+
+body {
+    background-image: url("https://i.imgur.com/o9piCn1.jpg");
+    background-color: hsl(221.54, 14.94%, 17.06%);
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+    font-family: Helvetica, sans-serif, Serif;
+}
+
+p {
+    font-size: 110%;
+}
+
+header img {
+    margin-left: 6%;
+    margin-right: auto;
+    width: auto;
+    height: 70px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    font-size: 25px;
+}
+
+nav {
+    margin-right: 20%;
+    margin-left: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+a {
+    color: hsl(48deg, 28%, 62%);
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#content-container {
+    background-color: hsla(48deg, 28%, 62%, 0.8);
+    max-width: 60%;
+    margin: 5% auto 30px auto;
+    min-width: 500px;
+}
+
+.main-content {
+    margin: 40px auto 40px auto;
+    max-width: 100%;
+    padding: 1em;
+    text-align: center;
+    color: black;
+}
+
+iframe {
+    display: block;
+    width: 75%;
+    border: none;
+}
+
+#why {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#why div {
+    width: 50%;
+}
+
+#why div p {
+    width: 90%;
+    text-align: justify;
+}
+
+#email {
+    width: 15em;
+    height: 2em;
+    font-size: 20px;
+}
+
+#submit:hover {
+    font-size: 35px;
+}
+
+#submit {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    font-size: 30px;
+    background-color: black;
+    color: hsl(48deg, 28%, 62%);
+    font-weight: bold;
+}
+
+form {
+    position: relative;
+    padding-bottom: 100px !important;
+    margin-bottom: 30px;
+    margin-top: 0 !important;
+}
+
+input {
+    border-radius: 10px;
+}
+
+#no-share {
+    color: rgba(63, 63, 63, 0.445)));
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .content-container {
+        width: 90%;
+        position: relative;
+        bottom: 10px;
+        padding-bottom: 30px;
+    }
+    iframe {
+        height: 300px;
+    }
+    nav {
+        display: none;
+    }
+    header img {
+        height: 45px;
+        margin: auto;
+    }
+}

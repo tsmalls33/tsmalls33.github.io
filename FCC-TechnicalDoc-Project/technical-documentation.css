@@ -1,0 +1,191 @@
+header h1 {
+    padding: 0.2em;
+    text-align: center;
+}
+
+p {
+    position: relative;
+    left: 2em;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+}
+
+#mobile-header {
+    display: none;
+}
+
+h4 {
+    position: relative;
+    left: 2em;
+}
+
+#company-logo {
+    width: 100%;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background-color: hsla(0, 0%, 90%, 1);
+    color: hsla(0, 0%, 20%, 1);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#navbar a:link,
+a:visited {
+    text-decoration: none;
+    color: hsla(0, 0%, 20%, 1);
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+    background-color: hsla(0, 0%, 50%, 1);
+    color: hsla(22, 100%, 50%, 1);
+}
+
+.nav-link {
+    border: 2px solid hsla(0, 0%, 30%, 1);
+    padding: 0.5em 0 0.5em 0.2em;
+    margin: 0;
+}
+
+main {
+    width: 60%;
+    margin-left: 20%;
+    padding: 2em;
+    font-size: 20px;
+}
+
+code {
+    color: hsla(22, 100%, 50%, 1);
+    padding: 1em;
+}
+
+code table th {
+    color: hsla(0, 0%, 20%, 1);
+}
+
+table,
+th,
+td {
+    border: 1px solid hsla(0, 0%, 30%, 1);
+    margin: 0;
+    padding: 0.1em;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: hsla(0, 0%, 90%, 1);
+}
+
+table li,
+code {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin-bottom: 3em;
+}
+
+#table-caption {
+    margin-top: -2em;
+}
+
+#Specifications img {
+    width: 700px;
+    height: auto;
+}
+
+li {
+    margin: 0.2em;
+}
+
+#img-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+figure {
+    margin-bottom: 1em;
+    width: 700px;
+    height: auto;
+}
+
+figcaption {
+    margin: 10px;
+    text-align: left;
+    font-size: 18px;
+    color: hsla(0, 0%, 40%, 1);
+}
+
+#img-container img {
+    max-width: 700px;
+    height: auto;
+}
+
+.reviews a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.reviews a:hover {
+    text-decoration: underline;
+    color: hsla(22, 100%, 50%, 1);
+}
+
+@media (max-width: 1000px) {
+    #navbar {
+        font-size: 15px;
+    }
+    main {
+        width: 80%;
+        padding: 0.2em;
+    }
+    img {
+        width: 70%;
+    }
+    figure {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    #mobile-header {
+        display: flex;
+        height: 5%;
+        width: auto;
+    }
+    #mobile-header img {
+        width: 50%;
+        height: auto;
+        margin: auto 0 auto 0;
+    }
+    #mobile-header h1 {
+        padding: 0;
+        margin: auto 0 auto 0;
+    }
+    #navbar {
+        display: none;
+    }
+    main {
+        margin: auto auto 10% auto;
+        width: 100%;
+    }
+    iframe {
+        width: 90%;
+        height: 300px;
+    }
+}

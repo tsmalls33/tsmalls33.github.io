@@ -1,0 +1,18 @@
+o- clear and engaging headline
+o- brief answers to anticipated questions
+o- brief statement about not showing info
+o- don't write 'submit' on submit button
+o- include 'social proof' if possible
+o- ONE single focused call to action
+o- Give guarantee if applicable
+o- integrate story telling in page
+o- clearly state value proposition IN THE HEADER
+	- keep it short (6-9 words)
+o- include a visual focus that will rab attention after the header
+o- include features, but prioritize outlining the benefits to your target audience
+o- Optimize page for who we think will be our future customers
+	- Who are they?
+	- what are their needs?
+	- what is making their life difficult?
+	- how can you make sure they understand that your proposed solution can help them?
+o- Build 'personas'

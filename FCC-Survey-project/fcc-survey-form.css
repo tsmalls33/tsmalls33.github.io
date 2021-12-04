@@ -1,0 +1,106 @@
+header {
+    text-align: center;
+}
+
+i {
+    margin-top: 15px;
+}
+
+.outer-container {
+    background-image: url("https://i.imgur.com/Jn13BUU.jpg");
+    text-align: center;
+    background-size: cover;
+    padding: 20px 0px 20px 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.inner-container {
+    background-color: hsla(187.11, 100%, 14.9%, 0.6);
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    width: 60%;
+    min-width: 760px;
+    color: hsl(51.76, 66.23%, 84.9%);
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+    text-align: center;
+    font-size: 130%;
+}
+
+form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.text-entries {
+    line-height: 1.5;
+}
+
+.checkbox-section {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    text-align: left;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+textarea {
+    margin-top: 30px;
+}
+
+label {
+    font-size: 18px;
+}
+
+#number {
+    min-width: 40px;
+}
+
+@media (min-width: 868px) {
+    .radio-section {
+        display: flex;
+        justify-content: center;
+        align-content: flex-end;
+        text-align: left;
+    }
+    .radio-section h2 {
+        text-align: center;
+    }
+    .radio-section label {
+        padding-left: 40%;
+    }
+}
+
+@media (max-width: 868px) {
+    .inner-container {
+        width: 90%;
+        min-width: 400px;
+    }
+    textarea {
+        max-width: 75%;
+    }
+    .radio-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-end;
+        text-align: left;
+    }
+    .radio-section h2 {
+        text-align: center;
+    }
+    .radio-section label {
+        padding-left: 40%;
+    }
+}
