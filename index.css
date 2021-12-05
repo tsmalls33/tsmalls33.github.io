@@ -1,0 +1,19 @@
+#middle-section {
+    width: 60%;
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 2em;
+}
+
+li a:link,
+a:visited {
+    color: black;
+}
+
+li a:hover {
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+}
