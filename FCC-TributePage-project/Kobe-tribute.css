@@ -46,7 +46,7 @@ nav a:link {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #fdb927;
     padding: 0px;
 }
 
