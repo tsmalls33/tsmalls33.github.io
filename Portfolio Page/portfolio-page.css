@@ -1,0 +1,397 @@
+/* * {
+    border: 2px solid red;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: libre-baskerville;
+    color: #F5EFE0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 8vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+#nav-img {
+    position: relative;
+    left: 5vw;
+    top: 4vh;
+    height: 130%;
+    width: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#nav-img:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease-out;
+}
+
+#nav-links {
+    position: relative;
+    right: 2vw;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 33.3%;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+#nav-links a:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(60deg, #901d1d, #022279);
+    background-size: 200% 200%;
+    animation: sliding-gradient 6s ease infinite;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    margin: auto auto 0 auto;
+    background: linear-gradient(60deg, #E67E25, #23B99A);
+    background-size: 200% 200%;
+    animation: sliding-gradient 6s ease infinite;
+}
+
+#project-tile-container {
+    position: relative;
+    right: 8vw;
+    width: 80vw;
+    height: 60vh;
+    margin: 0 auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-header {
+    margin-top: 10vh;
+    position: relative;
+    top: 30px;
+    right: 10%;
+    align-self: center;
+    border-bottom: 2px solid #F5EFE0;
+}
+
+.project-image {
+    max-width: 300px;
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.project-tile {
+    margin-top: 1em;
+    padding: 2em 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 45%;
+    height: 50%;
+    border-radius: 40px;
+}
+
+.project-tile a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-tile p {
+    margin: 0.5em 0 0 0;
+}
+
+.languages {
+    color: rgba(0, 0, 0, 0);
+    font-size: 100%;
+}
+
+.project-tile:hover .languages {
+    color: hsla(43, 51%, 92%, 0.7);
+    transition: color 0.5s ease-in-out;
+}
+
+.project-tile:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+
+#about-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(60deg, #E74C3B, #23B99A);
+    background-size: 200% 200%;
+    animation: sliding-gradient 6s ease infinite;
+}
+
+#about-content {
+    position: relative;
+    display: block;
+}
+
+footer {
+    width: 100vw;
+    background-color: black;
+}
+
+
+/* Animations and Media queries */
+
+@keyframes sliding-gradient {
+    0% {
+        background-position: 100% 0%
+    }
+    50% {
+        background-position: 0% 100%
+    }
+    100% {
+        background-position: 100% 0%
+    }
+}
+
+@keyframes uparrow {
+    0% {
+        up: 130vh;
+    }
+    100% {
+        up: 125vh;
+    }
+}
+
+@media(min-width:850px) {
+    #welcome-text {
+        display: block;
+        width: 60%;
+        height: 20vh;
+        position: relative;
+        bottom: 10vh;
+        right: 20vh;
+        margin: auto;
+        text-align: center;
+    }
+    /* Arrows start */
+    .arrow {
+        z-index: 0;
+    }
+    a p {
+        display: inline;
+        height: 100%;
+    }
+    #down-arrow-welcome {
+        display: block;
+        width: 10vw;
+        position: absolute;
+        top: 70vh;
+        left: 85vw;
+        margin: auto;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 40px;
+        border-radius: 50px;
+    }
+    #down-arrow-welcome:hover {
+        top: 71vh;
+        background: linear-gradient(60deg, #901d1d, #022279);
+        background-size: 200% 200%;
+        animation: sliding-gradient 4s ease infinite;
+        transition: top 0.4s ease;
+    }
+    #up-arrow-projects {
+        /* display: block; */
+        width: 10vw;
+        position: absolute;
+        top: 130vh;
+        left: 85vw;
+        margin: auto;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 40px;
+        border-radius: 50px;
+        animation: uparrow 1s ease infinite;
+    }
+    #up-arrow-projects:hover {
+        top: 129vh;
+        background: linear-gradient(60deg, #E67E25, #23B99A);
+        background-size: 200% 200%;
+        animation: sliding-gradient 4s ease infinite;
+        transition: top 0.4s ease;
+    }
+    #down-arrow-projects {
+        /* display: block; */
+        width: 10vw;
+        position: absolute;
+        top: 170vh;
+        left: 85vw;
+        margin: auto;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 40px;
+        border-radius: 50px;
+    }
+    #down-arrow-projects:hover {
+        top: 171vh;
+        background: linear-gradient(60deg, #E67E25, #23B99A);
+        background-size: 200% 200%;
+        animation: sliding-gradient 4s ease infinite;
+        transition: top 0.4s ease;
+    }
+    #up-arrow-about {
+        /* display: block; */
+        width: 10vw;
+        position: absolute;
+        top: 230vh;
+        left: 85vw;
+        margin: auto;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 40px;
+        border-radius: 50px;
+    }
+    #up-arrow-about:hover {
+        top: 229vh;
+        background: linear-gradient(60deg, #E74C3B, #23B99A);
+        background-size: 200% 200%;
+        animation: sliding-gradient 4s ease infinite;
+        transition: top 0.4s ease;
+    }
+    /* Arrows end */
+}
+
+@media(max-width: 850px) {
+    #nav-links {
+        display: none;
+    }
+    #welcome-text {
+        position: relative;
+        text-align: center;
+        right: 0;
+        top: 0;
+        width: 90%;
+        height: auto;
+    }
+    #projects {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: auto;
+        margin: auto;
+        background: linear-gradient(60deg, #E67E25, #23B99A);
+        background-size: 200% 200%;
+        animation: sliding-gradient 6s ease infinite;
+    }
+    #project-tile-container {
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .project-tile {
+        background-color: hsla(0, 0%, 0%, 0);
+        min-width: 95%;
+        width: 90%;
+        height: 20%;
+    }
+    .project-image {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+    .project-tile a {
+        width: 90%;
+    }
+    .projects-header {
+        padding-top: 10px;
+        text-align: center;
+        right: 0;
+        padding-bottom: 20px;
+    }
+    .arrow {
+        display: none;
+    }
+    .languages {
+        color: hsla(43, 51%, 92%, 0.7);
+    }
+}
+
+
+/* Fonts */
+
+@font-face {
+    font-family: marlboro;
+    src: url(Fonts/Marlboro.ttf);
+}
+
+@font-face {
+    font-family: libre-baskerville;
+    src: url(Fonts/LibreBaskerville-Regular.ttf);
+}
