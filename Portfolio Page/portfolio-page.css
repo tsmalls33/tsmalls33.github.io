@@ -2,11 +2,13 @@
         border: 2px solid red;
     } */
     
+    html,
     body {
         padding: 0;
         margin: 0;
         font-family: libre-baskerville;
         color: #F5EFE0;
+        height: 100%;
     }
     
     h1 {
@@ -104,56 +106,61 @@
     }
     
     #projects {
+        padding-top: 12vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        height: 100vh;
+        height: auto;
         width: 100vw;
+        min-height: 100vh;
         margin: 0;
-        background: linear-gradient(60deg, #E67E25, #23B99A);
         background-size: 200% 200%;
         animation: sliding-gradient 6s ease infinite;
+        background: linear-gradient(60deg, #E67E25, #23B99A);
     }
     
     #project-tile-container {
         width: 80vw;
-        height: 60vh;
-        margin: 0 auto auto 1em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    #projects-header {
-        width: 95%;
-        padding: 0 0 0 1em;
-        margin-top: 10vh;
-        position: relative;
-        top: 30px;
-        border-bottom: 2px solid #F5EFE0;
-    }
-    
-    .project-image {
-        max-width: 300px;
-        width: 100%;
-        height: 80%;
-        border-radius: 20px;
+        height: auto;
+        margin: 10vh auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 4em;
     }
     
     .project-tile {
-        margin-top: 1em;
-        padding: 2em 1em 1em 1em;
+        margin-top: auto;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.7);
-        max-width: 45%;
-        height: 50%;
-        border-radius: 40px;
+        border-radius: 20px;
+    }
+    
+    .project-tile-text {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #projects-header {
+        border-bottom: 2px solid hsla(43, 51%, 92%, 0.7);
+        width: 95%;
+        padding-left: 2em;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: ;
+        border-radius: 20px;
+    }
+    
+    .project-name {
+        font-size: 1em;
     }
     
     .project-tile a {
@@ -169,17 +176,7 @@
     
     .languages {
         color: rgba(0, 0, 0, 0);
-        font-size: 100%;
-    }
-    
-    .project-tile:hover .languages {
-        color: hsla(43, 51%, 92%, 0.7);
-        transition: color 0.5s ease-in-out;
-    }
-    
-    .project-tile:hover {
-        transform: scale(1.1);
-        transition: transform 0.4s ease;
+        font-size: 0.8em;
     }
     
     #about-contact {
@@ -187,28 +184,31 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
-        height: 100vh;
+        align-items: center;
+        height: auto;
         width: 100vw;
+        min-height: 100vh;
         margin: 0;
-        background: linear-gradient(60deg, #E74C3B, #23B99A);
         background-size: 200% 200%;
         animation: sliding-gradient 6s ease infinite;
+        background: linear-gradient(60deg, #E74C3B, #23B99A);
     }
     
     #about-section {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 55vh;
+        height: auto;
     }
     
     #about-section p {
-        padding: 0 15% 0 1%;
+        padding: 0 5% 0 1%;
     }
     
     #about-header {
         border-bottom: 2px solid hsla(43, 51%, 92%, 0.7);
         width: 95%;
-        padding: 0 0 0 1em;
+        padding-left: 2em;
     }
     
     #contact-section {
@@ -216,9 +216,9 @@
     }
     
     #contact-header {
-        width: 95%;
-        padding: 0 0 0 1em;
         border-bottom: 2px solid hsla(43, 51%, 92%, 0.7);
+        width: 95%;
+        padding-left: 2em;
     }
     
     #contact-links {
@@ -249,7 +249,7 @@
     }
     
     footer {
-        width: 100%;
+        width: 100vw;
         background-color: black;
         height: 3vh;
         font-size: 0.5em;
@@ -277,25 +277,25 @@
     
     @keyframes uparrow1 {
         0% {
-            top: 130vh;
+            bottom: 20;
         }
         50% {
-            top: 128vh;
+            bottom: 22;
         }
         100% {
-            top: 130vh;
+            bottom: 20;
         }
     }
     
     @keyframes uparrow2 {
         0% {
-            top: 230vh;
+            bottom: 2;
         }
         50% {
-            top: 228vh;
+            top: 0;
         }
         100% {
-            top: 230vh;
+            bottom: 2;
         }
     }
     
@@ -313,13 +313,13 @@
     
     @keyframes downarrow2 {
         0% {
-            top: 170vh;
+            top: 0;
         }
         50% {
-            top: 172vh;
+            top: 2;
         }
         100% {
-            top: 170vh;
+            top: 0;
         }
     }
     
@@ -337,6 +337,16 @@
         #contact-links a:hover {
             color: hsla(43, 51%, 92%, 0.7);
             transition: color 0.4s ease;
+            transform: scale(1.2);
+            transition: transform 0.2s ease-out;
+        }
+        .project-tile:hover .languages {
+            color: hsla(43, 51%, 92%, 0.7);
+            transition: color 0.5s ease-in-out;
+        }
+        .project-tile:hover {
+            transform: scale(1.1);
+            transition: transform 0.4s ease;
         }
         /* Arrows start */
         .arrow {
@@ -362,66 +372,6 @@
         #down-arrow-welcome:hover {
             top: 71vh;
             background: linear-gradient(60deg, #901d1d, #022279);
-            background-size: 200% 200%;
-            animation: sliding-gradient 4s ease infinite;
-            transition: top 0.4s ease;
-        }
-        #up-arrow-projects {
-            /* display: block; */
-            width: 10vw;
-            position: absolute;
-            top: 130vh;
-            left: 85vw;
-            margin: auto;
-            text-align: center;
-            color: whitesmoke;
-            font-size: 40px;
-            border-radius: 50px;
-            animation: uparrow1 1s ease infinite;
-        }
-        #up-arrow-projects:hover {
-            top: 129vh;
-            background: linear-gradient(60deg, #E67E25, #23B99A);
-            background-size: 200% 200%;
-            animation: sliding-gradient 4s ease infinite;
-            transition: top 0.4s ease;
-        }
-        #down-arrow-projects {
-            /* display: block; */
-            width: 10vw;
-            position: absolute;
-            top: 170vh;
-            left: 85vw;
-            margin: auto;
-            text-align: center;
-            color: whitesmoke;
-            font-size: 40px;
-            border-radius: 50px;
-            animation: downarrow2 1s ease infinite;
-        }
-        #down-arrow-projects:hover {
-            top: 171vh;
-            background: linear-gradient(60deg, #E67E25, #23B99A);
-            background-size: 200% 200%;
-            animation: sliding-gradient 4s ease infinite;
-            transition: top 0.4s ease;
-        }
-        #up-arrow-about {
-            /* display: block; */
-            width: 10vw;
-            position: absolute;
-            top: 230vh;
-            left: 85vw;
-            margin: auto;
-            text-align: center;
-            color: whitesmoke;
-            font-size: 40px;
-            border-radius: 50px;
-            animation: uparrow2 1s ease infinite;
-        }
-        #up-arrow-about:hover {
-            top: 229vh;
-            background: linear-gradient(60deg, #E74C3B, #23B99A);
             background-size: 200% 200%;
             animation: sliding-gradient 4s ease infinite;
             transition: top 0.4s ease;
@@ -455,17 +405,13 @@
             animation: sliding-gradient 6s ease infinite;
         }
         #project-tile-container {
-            right: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            height: auto;
+            /* width: 100%;
+            height: auto; */
         }
         .project-tile {
             background-color: hsla(0, 0%, 0%, 0);
-            min-width: 95%;
-            width: 90%;
-            height: 20%;
+            max-width: 95%;
+            padding: 0;
         }
         .project-image {
             width: 100%;
@@ -473,14 +419,17 @@
             max-width: none;
         }
         .project-tile a {
-            width: 90%;
+            width: 100%;
         }
         #projects-header {
             width: 100%;
-            padding-top: 10px;
+            padding: 0;
             text-align: center;
-            right: 0;
             padding-bottom: 20px;
+        }
+        .project-tile:hover {
+            background-color: hsla(0, 0%, 0%, 0.6);
+            transition: transform 0.4s ease;
         }
         .arrow {
             display: none;
@@ -492,18 +441,20 @@
             height: auto;
         }
         #about-section p {
-            padding: 0 1% 0 1%;
+            padding: 0 5% 0 2%;
             font-size: 1.3em;
         }
         #about-header {
             text-align: center;
+            padding: 0;
         }
         #contact-header {
             text-align: center;
             margin-top: 2em;
+            padding: 0;
         }
         #contact-links img {
-            height: 8vw;
+            max-height: 8vw;
             margin: 1em;
         }
         #contact-links a {
@@ -511,7 +462,12 @@
             margin: 0.5em;
         }
         #contact-links {
+            padding-left: 2em;
+            margin: auto;
             height: auto;
+            display: grid;
+            grid-template-columns: minmax(5vh, 1fr) minmax(5vh, 1fr) minmax(5vh, 1fr);
+            grid-gap: 2em;
         }
         #contact-links p {
             display: none;
