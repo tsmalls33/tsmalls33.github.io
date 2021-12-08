@@ -1,28 +1,120 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="index.css" type="text/css">
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Page</title>
+    <link rel="stylesheet" href="portfolio-page.css" type="text/css">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </head>
-<!-- onload="alert('Hi! Thanks for visiting this website. A better version will be online sooon...');" -->
 
-<body \>
-    <section id="middle-section">
-        <h1>Free Code Camp Projects</h1>
-        <h2>Responsive web design certification</h2>
-
-        <ol>
-            <li><a href="/FCC-TributePage-project/Kobe-tribute.html" target="_blank">Kobe Bryant tribute page</a></li>
-            <li><a href="/FCC-Survey-project/fcc-survey-form.html" target="_blank">Feedback survey page</a></li>
-            <li><a href="/FCC-LandingPage-Project/landing-page.html" target="_blank">Coffee gringer landing landing page</a></li>
-            <li><a href="/FCC-TechnicalDoc-Project/technical-documentation.html" target="_blank">Keychron K2 technical documentation page</a></li>
-            <li><a href="/Portfolio Page/portfolio-page.html" target="_blank">Portfolio page (in progress)</a></li>
-        </ol>
+<body>
+    <nav id="navbar">
+        <img src="https://i.imgur.com/uG7z3it.jpg" alt="" id="nav-img" onclick="alert('Thank you for visiting my website! I hope to hear from you soon.');">
+        <div id="nav-links">
+            <a href="#welcome-section">Welcome</a>
+            <a href="#projects">Projects</a>
+            <a href="#about-contact">About</a>
+        </div>
+    </nav>
+    <section id="welcome-section">
+        <div id="welcome-text">
+            <h1>Welcome to my portfolio page</h1>
+            <p id="subtitle">Thomas Smallwood</p>
+        </div>
+        <a id="down-arrow-welcome" href="#projects" class="arrow down-arrow">
+            <p>
+                ⇓</p>
+        </a>
     </section>
+    <section id="projects">
+        <h2 id="projects-header">What I've built so far</h2>
+        <div id="project-tile-container">
+            <div class="project-tile">
+                <a href="https://tsmalls33.github.io/FCC-TributePage-project/Kobe-tribute.html" target="_blank">
+                    <img class="project-image" src="https://i.imgur.com/Qctm4ge.png" alt="">
+                    <div class="project-tile-text">
+                        <p class="project-name">Tribute page</p>
+                        <p class="languages">html & css</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://tsmalls33.github.io/FCC-Survey-project/fcc-survey-form.html" target="_blank">
+                    <img class="project-image" src="https://i.imgur.com/ofQU1di.png" alt="">
+                    <div class="project-tile-text">
+                        <p class="project-name">Survey form</p>
+                        <p class="languages">html & css</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://tsmalls33.github.io/FCC-LandingPage-Project/landing-page.html" target="_blank">
+                    <img class="project-image" src="https://i.imgur.com/8E1y9xJ.png" alt="">
+                    <div class="project-tile-text">
+                        <p class="project-name">Product landing page</p>
+                        <p class="languages">html & css</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://tsmalls33.github.io/FCC-TechnicalDoc-Project/technical-documentation.html" target="_blank">
+                    <img class="project-image" src="https://i.imgur.com/GAgUJam.png" alt="">
+                    <div class="project-tile-text">
+                        <p class="project-name">Technical documentation</p>
+                        <p class="languages">html & css</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div id="about-contact">
+        <section id="about-section">
+            <h2 id="about-header">Get to know me</h2>
+            <p>I have been a professional basketball player in Europe since August 2019. I am currently learning software and web development in my free time on a daily basis. My goal is to start developing my portfolio and start working remotely in this
+                field while I am still playing basketball. I’d be glad to collaborate on any kind of project that would further my education as a software/web developer.</p>
+            <p>You will find more information about my resume and my degrees in some of the links below (LinkedIn, GitHub).
+            </p>
+            <p>Thank you for your visit and I hope to hear from you soon!</p>
+
+        </section>
+        <section id="contact-section">
+            <h2 id="contact-header">Where to find me</h2>
+            <div id="contact-links">
+                <a href="mailto:tbm.smallwood@gmail.com" class="contact-link" target="_blank"><img src="https://i.imgur.com/4hgYSdD.png" alt="Gmail logo">
+                    <p>Gmail</p>
+                </a>
+                <a href="https://www.linkedin.com/in/thomas-smallwood" class="contact-link" target="_blank"><img src="https://i.imgur.com/gkIzBVq.png" alt="LinkedIn logo">
+                    <p>LinkedIn</p>
+                </a>
+                <a href="https://www.github.com/tsmalls33" id="profile-link" class="contact-link" target="_blank"><img src="https://i.imgur.com/TaIk7Rl.png" alt="GitHub logo">
+                    <p>GitHub</p>
+                </a>
+                <a href="https://www.freecodecamp.org/fccb94cb4c7-a299-4426-9e0e-d96dcd2572dc" class="contact-link" target="_blank"><img src="https://i.imgur.com/MxXl8zr.png" alt="Free Code Camp logo">
+                    <p>Free Code Camp</p>
+                </a>
+                <a href="https://www.instagram.com/tootaaall/" class="contact-link" target="_blank"><img src="https://i.imgur.com/jLsHaOe.png" alt="Instagram logo">
+                    <p>Instagram</p>
+                </a>
+                <a href="https://mobile.twitter.com/Tootall_Small" class="contact-link" target="_blank"><img src="https://i.imgur.com/Nw7qTZ8.png" alt="Twitter logo">
+                    <p>Twitter</p>
+                </a>
+                <a href="https://www.twopoints.it/players/player/thomas-smallwood/" class="contact-link" target="_blank"><img src="https://i.imgur.com/KRUuBT1.png" alt="Basketball logo">
+                    <p>Basketball profile</p>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Thomas_Smallwood_(basketball)" class="contact-link" target="_blank"><img src="https://i.imgur.com/J7WSlBO.png" alt="Wikipedia logo">
+                    <p>Wikipedia</p>
+                </a>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>@Thomas Smallwood 2021</p>
+    </footer>
 
 </body>
 
