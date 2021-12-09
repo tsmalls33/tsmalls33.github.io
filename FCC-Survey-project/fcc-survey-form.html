@@ -91,12 +91,12 @@
                 <label class="text-entries" for="number" id="number-label">Please rate my website out of 10: </label><br>
                 <input class="text-entries" type="number" placeholder="1-10" id="number" min="1" max="10"><br>
                 <textarea id="additional-comments" cols="60" rows="10" placeholder="Please feel free to include any additional comments or recommendations."></textarea><br>
-                <button id="submit">Submit</button>
+                <button id="submit" type="submit" name="submit">Submit</button>
             </form>
         </div>
     </div>
     <script>
-        document.getElementById("submit").onclick = alert("This form is display only. If you would like to send me feedback, please send me an email. I would love to hear aout it.");
+        document.querySelector('button[type="submit"]').clickonclick = alert("This form is display only. If you would like to send me feedback, please send me an email. I would love to hear about it.");
     </script>
 
 </body>
