@@ -65,7 +65,9 @@
         <p id="no-share">Your privacy matters to us, we will not share your information.</p>
     </div>
     <script>
-        document.querySelector('button[type="submit"]').clickonclick = alert("This page is display only. If it convinced you to get a coffee grinder, tell me about it via email... and then go to Amazon. ;)");
+        document.querySelector('button').onclick = function displayOnly() {
+            alert("This page is display only. If it convinced you to get a coffee grinder, tell me about it via email... and then go to Amazon. ;)");
+        }
     </script>
 </body>
 

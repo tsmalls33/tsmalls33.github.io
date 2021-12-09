@@ -96,7 +96,9 @@
         </div>
     </div>
     <script>
-        document.querySelector('button[type="submit"]').clickonclick = alert("This form is display only. If you would like to send me feedback, please send me an email. I would love to hear about it.");
+        document.querySelector('button').onclick = function displayOnly() {
+            alert("This form is display only. If you would like to send me feedback, please send me an email. I would love to hear about it.");
+        }
     </script>
 
 </body>
