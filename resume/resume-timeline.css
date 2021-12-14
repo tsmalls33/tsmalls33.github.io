@@ -35,6 +35,12 @@
     color: var(--accentColor);
 }
 
+#basketball {
+    --backgroundColor: hsla(39, 100%, 34%, 0.1);
+    --accentColor: rgb(170, 110, 0);
+    color: var(--accentColor);
+}
+
 
 /* END VARIABLES */
 
