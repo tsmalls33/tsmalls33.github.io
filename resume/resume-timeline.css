@@ -20,7 +20,7 @@
     --paddingLarge: 0.5rem;
     --avatarSize: 50px;
     --iconSize: 1.5rem;
-    /* --test: rgb(0, 81, 231); */
+    /* --test: rgb(0, 141, 235); */
 }
 
 #uab {
@@ -31,7 +31,7 @@
 }
 
 #utc {
-    --backgroundColor: hsla(209, 100%, 21%, 0.1);
+    --backgroundColor: hsla(209, 100%, 21%, 0.2);
     --accentColor: hsla(209, 100%, 21%, 1);
     color: var(--accentColor);
     order: 2;
@@ -53,7 +53,7 @@ body {
     font-size: 1.2rem;
 }
 
-#selectors {
+#selectors-container {
     color: whitesmoke;
     display: flex;
     justify-content: center;

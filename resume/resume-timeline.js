@@ -25,7 +25,7 @@ selectTheme.addEventListener("change", () => {
             root.style.setProperty("--boxBackgroundColor", "white");
             uab.style.setProperty("--backgroundColor", "hsla(159, 100%, 19%, 0.1)");
             uab.style.setProperty("--accentColor", "hsla(159, 100%, 19%, 1)");
-            utc.style.setProperty("--backgroundColor", "hsla(209, 100%, 21%, 0.1)");
+            utc.style.setProperty("--backgroundColor", "hsla(209, 100%, 21%, 0.2)");
             utc.style.setProperty("--accentColor", "hsla(209, 100%, 21%, 1)");
             basketball.style.setProperty(
                 "--backgroundColor",
@@ -55,7 +55,7 @@ selectTheme.addEventListener("change", () => {
             );
             break;
         case "blue":
-            changeTheme("hsl(219, 100%, 46%)", "hsla(219, 100%, 46%, 0.1)", "white");
+            changeTheme("hsl(204, 100%, 46%)", "hsla(0, 0%, 90%, 0.3)", "white");
             break;
     }
 });
