@@ -51,9 +51,7 @@ a:visited {
 
 #resume-link {
     position: relative;
-    left: 5vw;
-    top: 4vh;
-    height: 130%;
+    height: 100%;
     width: auto;
     border-radius: 50%;
     cursor: pointer;
@@ -62,7 +60,7 @@ a:visited {
 #nav-img {
     position: relative;
     left: 5vw;
-    top: 4vh;
+    top: 3vh;
     height: 130%;
     width: auto;
     border-radius: 50%;
