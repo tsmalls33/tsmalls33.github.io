@@ -14,21 +14,27 @@
  -->
 
 <body>
-    <label for="theme-selector">Select a theme: </label>
-    <select name="" id="theme-selector">
-      <option value="original">Original</option>
-      <option value="dark">Dark</option>
-      <option value="light">Light</option>
-      <option value="vintage">Vintage</option>
-      <option value="matrix">Matrix</option>
-      <option value="blue">Blue</option>
-    </select>
-    <label for="order-selector">Select the desired order of sections: </label>
-    <select name="" id="order-selector">
-      <option value="latest-first">Oldest last</option>
-      <option value="latest-last">Oldest first</option>
-    </select>
-    <section class="outer-container">
+    <div id="selectors">
+        <div id="selector1">
+            <label for="theme-selector">Choose your theme: </label>
+            <select name="" id="theme-selector">
+          <option value="original">Original</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="vintage">Vintage</option>
+          <option value="matrix">Matrix</option>
+          <option value="blue">Blue</option>
+        </select>
+        </div>
+        <div id="selector2">
+            <label for="order-selector">Choose your order: </label>
+            <select name="" id="order-selector">
+          <option value="latest-first">Oldest last</option>
+          <option value="latest-last">Oldest first</option>
+        </select>
+        </div>
+    </div>
+    <section class="content-container">
         <section class="group-container" id="basketball">
             <div class="group-header">
                 <div class="group-title">Professional basketball</div>

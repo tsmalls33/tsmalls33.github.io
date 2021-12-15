@@ -28,24 +28,28 @@ selectTheme.addEventListener("change", () => {
                 "--backgroundColor",
                 "hsla(39, 100%, 34%, 0.1)"
             );
-            basketball.style.setProperty("--accentColor", "rgb(170, 110, 0)");
+            basketball.style.setProperty("--accentColor", "hsla(0, 0%, 0%, 1)");
             break;
 
         case "dark":
-            changeTheme("white", "black", "grey");
+            changeTheme("white", "hsla(0, 0%, 0%, 0.3)", "rgb(70,70,70)");
             break;
         case "light":
-            changeTheme("black", "rgb(240, 240, 240)", "white");
+            changeTheme("black", "hsla(0, 0%, 94%,0.3)", "white");
             break;
         case "vintage":
             changeTheme(
                 "hsl(165.6, 100%, 100%)",
-                "hsla(165.6, 27.78%, 64.71%, 1)",
-                "hsla(0, 82.76%, 65.88%, 1)"
+                "hsla(165.6, 27.78%, 64.71%, 0.3)",
+                "hsla(0, 82.76%, 65.88%, 0.7    )"
             );
             break;
         case "matrix":
-            changeTheme("#adff2f", "black", "hsla(84, 100%, 59%, 0.08)");
+            changeTheme(
+                "#adff2f",
+                "hsla(0, 0%, 0%, 0.6)",
+                "hsla(84, 100%, 59%, 0.08)"
+            );
             break;
         case "blue":
             changeTheme("hsl(219, 100%, 46%)", "hsla(219, 100%, 46%, 0.1)", "white");

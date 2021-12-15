@@ -15,7 +15,7 @@
     --roundAngles: 0.25rem;
     --boxGap: 1rem;
     --headerGap: 2rem;
-    --lineWidth: 0.1rem;
+    --lineWidth: 0.15rem;
     --paddingStandard: 0.25rem;
     --paddingLarge: 0.5rem;
     --avatarSize: 50px;
@@ -39,7 +39,7 @@
 
 #basketball {
     --backgroundColor: hsla(39, 100%, 34%, 0.1);
-    --accentColor: rgb(170, 110, 0);
+    --accentColor: hsla(0, 0%, 0%, 1);
     color: var(--accentColor);
     order: 1;
 }
@@ -48,11 +48,22 @@
 /* END VARIABLES */
 
 body {
-    background-color: var(--backgroundColor);
+    background-image: url("https://i.imgur.com/w3oLUB6.jpg");
     font-size: 1.2rem;
 }
 
-.outer-container {
+#selectors {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: fit-content;
+    margin: 1rem auto;
+    background-color: hsla(33, 100%, 88%, 0.5);
+    border-radius: 1rem;
+    padding: 0.4rem;
+}
+
+.content-container {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -65,6 +76,7 @@ body {
     padding: var(--paddingLarge);
     border: 2px solid var(--accentColor);
     margin-bottom: 0.5rem;
+    border-radius: 1rem;
 }
 
 .group-header {
