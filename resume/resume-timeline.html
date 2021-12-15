@@ -33,9 +33,17 @@
           <option value="latest-last">Oldest first</option>
         </select>
         </div>
+        <div id="selector3">
+            <label for="category-selector">Choose your categories: </label>
+            <select name="" id="category-selector">
+          <option value="all">All</option>
+          <option value="academic">Academic only</option>
+          <option value="professional">Professional only</option>
+        </select>
+        </div>
     </div>
     <section class="content-container">
-        <section class="group-container" id="basketball">
+        <section class="group-container professional" id="basketball">
             <div class="group-header">
                 <div class="group-title">Professional basketball</div>
                 <div class="group-date">Aug 2019 - Present</div>
@@ -153,7 +161,7 @@
                 </div>
             </div>
         </section>
-        <section class="group-container" id="utc">
+        <section class="group-container academic" id="utc">
             <div class="group-header">
                 <div class="group-title">University of Tennessee Chattanooga</div>
                 <div class="group-date">2018-2019</div>
@@ -171,11 +179,19 @@
                 ></path>
               </svg>
                         <div class="notification-title">
-                            University of Alabama Birmingham
+                            Masters of Public Administration
                         </div>
-                        <div class="notification-date">2015-2018</div>
+                        <div class="notification-date">2018-2019</div>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
+                    <div class="notification-content">
+                        <ul>
+                            <li>
+                                <strong>Capstone project:</strong> planning a conservation program for an endangered species with the collaboration of the Chattanooga Zoo.
+                            </li>
+                            <li>Completed the 2-year program in 1 year</li>
+                            <li>4.0 institutional GPA</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="notification-image">
                     <img src="https://i.imgur.com/2vXeJrQ.jpg" alt="" />
@@ -188,34 +204,32 @@
                   d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"
                 ></path>
               </svg>
-                        <div class="notification-title">
-                            University of Alabama Birmingham
-                        </div>
-                        <div class="notification-date">2015-2018</div>
+                        <div class="notification-title">Chattanooga Zoo internship</div>
+                        <div class="notification-date">jun 2018 - aug 2018</div>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
-                </div>
-                <div class="notification-image">
-                    <img src="https://i.imgur.com/2vXeJrQ.jpg" alt="" />
-                </div>
-                <div class="notification-box">
-                    <div class="notification-header">
-                        <svg class="icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <path
-                  fill="currentColor"
-                  d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"
-                ></path>
-              </svg>
-                        <div class="notification-title">
-                            University of Alabama Birmingham
-                        </div>
-                        <div class="notification-date">2015-2018</div>
+                    <div class="notification-content">
+                        <ul>
+                            <li>
+                                Completed a 300hr internship in the Marketing and Communications department of the Chattanooga Zoo.
+                            </li>
+                            <li>
+                                <strong>Main tasks:</strong>
+                                <ul>
+                                    <li>Writing press releases</li>
+                                    <li>Creating event flyers</li>
+                                    <li>Organizing and running various events</li>
+                                    <li>Developing educational material for visitors</li>
+                                    <li>
+                                        Sitting in on organization meetings to learn about the various departments of the zoo (financial, organizational, educational)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
                 </div>
             </div>
         </section>
-        <section class="group-container" id="uab">
+        <section class="group-container academic" id="uab">
             <div class="group-header">
                 <div class="group-title">University of Alabama at Birmingham</div>
                 <div class="group-date">2015-2018</div>
@@ -233,11 +247,21 @@
                 ></path>
               </svg>
                         <div class="notification-title">
-                            University of Alabama Birmingham
+                            Graduate work (Communications)
                         </div>
-                        <div class="notification-date">2015-2018</div>
+                        <div class="notification-date">2017-2018</div>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
+                    <div class="notification-content">
+                        <ul>
+                            <li>
+                                Completed 18 credit hours of graduate work in the communications program
+                            </li>
+                            <li>4.0 institutional GPA</li>
+                            <li>
+                                Left UAB after the first graduate year for basketball purposes
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="notification-image">
                     <img src="https://i.imgur.com/omNcYvg.png" alt="" />
@@ -251,11 +275,17 @@
                 ></path>
               </svg>
                         <div class="notification-title">
-                            University of Alabama Birmingham
+                            Bachelor of Arts in Communication Studies
                         </div>
-                        <div class="notification-date">2015-2018</div>
+                        <div class="notification-date">2015-2017</div>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
+                    <div class="notification-content">
+                        <ul>
+                            <li>Graduated with honors</li>
+                            <li>3.94 institutional GPA</li>
+                            <li>Student Athlete with the Mens Basketball team</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="notification-image">
                     <img src="https://i.imgur.com/omNcYvg.png" alt="" />
@@ -268,12 +298,20 @@
                   d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"
                 ></path>
               </svg>
-                        <div class="notification-title">
-                            University of Alabama Birmingham
-                        </div>
+                        <div class="notification-title">Volunteering</div>
                         <div class="notification-date">2015-2018</div>
                     </div>
-                    <div class="notification-content">This is what I did at UAB</div>
+                    <div class="notification-content">
+                        <ul>
+                            <li>
+                                Over 100hrs of volunteering at the Children's Hospital in Birmingham
+                            </li>
+                            <li>
+                                Participated in several community interventions with the Mens Basketball team, such as mental hospitals, Children's Hospital, and more.
+                            </li>
+                            <li>Participated in Church of the Highlands Help Day twice</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
