@@ -2,7 +2,8 @@ const root = document.querySelector(":root");
 const uab = document.getElementById("uab");
 const utc = document.getElementById("utc");
 const proBasketball = document.getElementById("basketball");
-const select = document.querySelector("select");
+const selectTheme = document.getElementById("theme-selector");
+const selectOrder = document.getElementById("order-selector");
 
 function changeTheme(accentColor, bgColor, boxBgColor) {
     root.style.setProperty("--boxBackgroundColor", boxBgColor);
@@ -14,8 +15,8 @@ function changeTheme(accentColor, bgColor, boxBgColor) {
     basketball.style.setProperty("--accentColor", accentColor);
 }
 
-select.addEventListener("change", () => {
-    const choice = select.value;
+selectTheme.addEventListener("change", () => {
+    const choice = selectTheme.value;
     switch (choice) {
         case "original":
             root.style.setProperty("--boxBackgroundColor", "white");
@@ -48,6 +49,22 @@ select.addEventListener("change", () => {
             break;
         case "blue":
             changeTheme("hsl(219, 100%, 46%)", "hsla(219, 100%, 46%, 0.1)", "white");
+            break;
+    }
+});
+
+selectOrder.addEventListener("change", () => {
+    const choice = selectOrder.value;
+    switch (choice) {
+        case "latest-first":
+            uab.style.setProperty("order", "3");
+            utc.style.setProperty("order", "2");
+            basketball.style.setProperty("order", "1");
+            break;
+        case "latest-last":
+            uab.style.setProperty("order", "1");
+            utc.style.setProperty("order", "2");
+            basketball.style.setProperty("order", "3");
             break;
     }
 });
