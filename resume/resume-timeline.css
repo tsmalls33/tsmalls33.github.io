@@ -121,6 +121,8 @@ body {
     padding: var(--paddingStandard);
     display: flex;
     justify-content: space-between;
+    /* align-items: center;
+    height: 50px; */
     gap: calc(0.5 * var(--iconSize));
 }
 
@@ -204,7 +206,7 @@ body {
     .content-container {
         width: 100%;
     }
-    #selectors {
+    #selectors-container {
         width: 100%;
     }
 }
