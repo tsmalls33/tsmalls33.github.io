@@ -1,8 +1,9 @@
 const root = document.querySelector(":root");
 const uab = document.getElementById("uab");
 const utc = document.getElementById("utc");
-const pro = document.getElementsByClassName("professional");
-const academic = document.getElementsByClassName("academic");
+const proClass = document.getElementsByClassName("professional");
+const academicClass = document.getElementsByClassName("academic");
+const communityClass = document.getElementsByClassName("community");
 const proBasketball = document.getElementById("basketball");
 const selectTheme = document.getElementById("theme-selector");
 const selectOrder = document.getElementById("order-selector");
@@ -76,41 +77,62 @@ selectOrder.addEventListener("change", () => {
     }
 });
 
-// selectCategory.addEventListener("change", () => {
-//     const choice = selectCategory.value;
-//     switch (choice) {
-//         case "all":
-//             pro.style.setProperty("display", "block");
-//             academic.style.setProperty("display", "block");
-//             break;
-//         case "professional":
-//             pro.style.setProperty("display", "block");
-//             academic.style.setProperty("display", "none");
-//             break;
-//         case "academic":
-//             pro.style.setProperty("display", "none");
-//             academic.style.setProperty("display", "block");
-//             break;
-//     }
-// });
-
 selectCategory.addEventListener("change", () => {
     const choice = selectCategory.value;
     switch (choice) {
         case "all":
-            uab.style.setProperty("display", "block");
-            utc.style.setProperty("display", "block");
-            basketball.style.setProperty("display", "block");
+            for (var i = 0; i < proClass.length; i++) {
+                proClass[i].style.setProperty("display", "block");
+            }
+            for (var i = 0; i < academicClass.length; i++) {
+                academicClass[i].style.setProperty("display", "block");
+            }
+            for (var i = 0; i < communityClass.length; i++) {
+                communityClass[i].style.setProperty("display", "block");
+            }
             break;
         case "professional":
-            uab.style.setProperty("display", "none");
-            utc.style.setProperty("display", "none");
-            basketball.style.setProperty("display", "block");
+            for (var i = 0; i < proClass.length; i++) {
+                proClass[i].style.setProperty("display", "block");
+            }
+            for (var i = 0; i < academicClass.length; i++) {
+                academicClass[i].style.setProperty("display", "none");
+            }
+            for (var i = 0; i < communityClass.length; i++) {
+                communityClass[i].style.setProperty("display", "none");
+            }
             break;
         case "academic":
-            uab.style.setProperty("display", "block");
-            utc.style.setProperty("display", "block");
-            basketball.style.setProperty("display", "none");
+            for (var i = 0; i < proClass.length; i++) {
+                proClass[i].style.setProperty("display", "none");
+            }
+            for (var i = 0; i < academicClass.length; i++) {
+                academicClass[i].style.setProperty("display", "block");
+            }
+            for (var i = 0; i < communityClass.length; i++) {
+                communityClass[i].style.setProperty("display", "none");
+            }
             break;
     }
 });
+
+// selectCategory.addEventListener("change", () => {
+//     const choice = selectCategory.value;
+//     switch (choice) {
+//         case "all":
+//             uab.style.setProperty("display", "block");
+//             utc.style.setProperty("display", "block");
+//             basketball.style.setProperty("display", "block");
+//             break;
+//         case "professional":
+//             uab.style.setProperty("display", "none");
+//             utc.style.setProperty("display", "none");
+//             basketball.style.setProperty("display", "block");
+//             break;
+//         case "academic":
+//             uab.style.setProperty("display", "block");
+//             utc.style.setProperty("display", "block");
+//             basketball.style.setProperty("display", "none");
+//             break;
+//     }
+// });
