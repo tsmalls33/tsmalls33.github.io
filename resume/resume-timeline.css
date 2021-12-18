@@ -170,6 +170,7 @@ body {
 }
 
 .notification-image::after {
+    display: block;
     content: "";
     grid-column: 1 / 2;
     width: var(--lineWidth);
@@ -182,11 +183,32 @@ body {
     bottom: calc(var(--boxGap) * -1);
 }
 
+.notification-image.bachelor.mod::after {
+    display: none;
+}
+
+.notification-image.mpa.mod::after {
+    display: none;
+}
+
 .notification-image:nth-last-child(2)::after {
     display: none;
 }
 
 .notification-image:first-child::before {
+    content: "";
+    grid-column: 1 / 2;
+    width: var(--lineWidth);
+    background-color: var(--accentColor);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: calc(var(--headerGap) * -1);
+    bottom: 100%;
+}
+
+.notification-image.internship.mod::before {
     content: "";
     grid-column: 1 / 2;
     width: var(--lineWidth);

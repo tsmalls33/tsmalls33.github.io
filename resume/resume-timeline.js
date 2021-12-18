@@ -1,13 +1,20 @@
+// Variable declarations
+
 const root = document.querySelector(":root");
 const uab = document.getElementById("uab");
 const utc = document.getElementById("utc");
 const proClass = document.getElementsByClassName("professional");
 const academicClass = document.getElementsByClassName("academic");
-const communityClass = document.getElementsByClassName("community");
+const volunteeringClass = document.getElementsByClassName("volunteering");
 const proBasketball = document.getElementById("basketball");
 const selectTheme = document.getElementById("theme-selector");
 const selectOrder = document.getElementById("order-selector");
 const selectCategory = document.getElementById("category-selector");
+const mpaImage = document.getElementsByClassName("mpa")[0];
+const bachelorImage = document.getElementsByClassName("bachelor")[0];
+const internshipImage = document.getElementsByClassName("internship")[0];
+
+// Change theme function
 
 function changeTheme(accentColor, bgColor, boxBgColor) {
     root.style.setProperty("--boxBackgroundColor", boxBgColor);
@@ -18,6 +25,8 @@ function changeTheme(accentColor, bgColor, boxBgColor) {
     basketball.style.setProperty("--backgroundColor", bgColor);
     basketball.style.setProperty("--accentColor", accentColor);
 }
+
+// Theme selector
 
 selectTheme.addEventListener("change", () => {
     const choice = selectTheme.value;
@@ -61,6 +70,8 @@ selectTheme.addEventListener("change", () => {
     }
 });
 
+// Order selector
+
 selectOrder.addEventListener("change", () => {
     const choice = selectOrder.value;
     switch (choice) {
@@ -77,6 +88,8 @@ selectOrder.addEventListener("change", () => {
     }
 });
 
+// Category selector using class name
+
 selectCategory.addEventListener("change", () => {
     const choice = selectCategory.value;
     switch (choice) {
@@ -87,9 +100,13 @@ selectCategory.addEventListener("change", () => {
             for (var i = 0; i < academicClass.length; i++) {
                 academicClass[i].style.setProperty("display", "block");
             }
-            for (var i = 0; i < communityClass.length; i++) {
-                communityClass[i].style.setProperty("display", "block");
+            for (var i = 0; i < volunteeringClass.length; i++) {
+                volunteeringClass[i].style.setProperty("display", "block");
             }
+
+            bachelorImage.className = "notification-image bachelor";
+            mpaImage.className = "notification-image academic mpa";
+            internshipImage.className = "notification-image professional internship";
             break;
         case "professional":
             for (var i = 0; i < proClass.length; i++) {
@@ -98,9 +115,15 @@ selectCategory.addEventListener("change", () => {
             for (var i = 0; i < academicClass.length; i++) {
                 academicClass[i].style.setProperty("display", "none");
             }
-            for (var i = 0; i < communityClass.length; i++) {
-                communityClass[i].style.setProperty("display", "none");
+            for (var i = 0; i < volunteeringClass.length; i++) {
+                volunteeringClass[i].style.setProperty("display", "none");
             }
+
+            bachelorImage.className = "notification-image bachelor";
+            mpaImage.className = "notification-image academic mpa";
+            internshipImage.className =
+                "notification-image professional internship mod";
+
             break;
         case "academic":
             for (var i = 0; i < proClass.length; i++) {
@@ -109,12 +132,18 @@ selectCategory.addEventListener("change", () => {
             for (var i = 0; i < academicClass.length; i++) {
                 academicClass[i].style.setProperty("display", "block");
             }
-            for (var i = 0; i < communityClass.length; i++) {
-                communityClass[i].style.setProperty("display", "none");
+            for (var i = 0; i < volunteeringClass.length; i++) {
+                volunteeringClass[i].style.setProperty("display", "none");
             }
+
+            bachelorImage.className = "notification-image bachelor mod";
+            mpaImage.className = "notification-image academic mpa mod";
+            internshipImage.className = "notification-image professional internship";
             break;
     }
 });
+
+// Category selector using id attribute
 
 // selectCategory.addEventListener("change", () => {
 //     const choice = selectCategory.value;
