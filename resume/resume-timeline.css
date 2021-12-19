@@ -221,6 +221,18 @@ body {
     bottom: 100%;
 }
 
+a:visited,
+a:link,
+a {
+    padding: 0.2rem;
+    color: var(--accentColor);
+}
+
+a:hover {
+    border-radius: 0.5rem;
+    background-color: var(--boxBackgroundColor);
+}
+
 @media (max-width: 850px) {
     .group-container {
         width: 100%;
