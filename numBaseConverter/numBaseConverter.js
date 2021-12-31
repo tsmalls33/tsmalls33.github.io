@@ -153,10 +153,17 @@ originBaseSelector.addEventListener("change", () => {
     }
     if (originBase <= 10) {
         document.querySelector("#caps-warning").innerHTML = "a number";
+        document.querySelector("#digits").style.setProperty("font-size", "18px");
     } else if (originBase > 10 && originBase < 26) {
+        if (originBase > 24) {
+            document.querySelector("#digits").style.setProperty("font-size", "16px");
+        } else {
+            document.querySelector("#digits").style.setProperty("font-size", "18px");
+        }
         document.querySelector("#caps-warning").innerHTML =
             "numbers and capital letters";
     } else if (originBase == 26) {
+        document.querySelector("#digits").style.setProperty("font-size", "16px");
         document.querySelector("#caps-warning").innerHTML = "capital letters";
     }
     document.querySelector("#digits").innerHTML = valArrInit();

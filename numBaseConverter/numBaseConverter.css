@@ -47,8 +47,7 @@ h2 {
 }
 
 #intro {
-    width: 80%;
-    min-width: 30rem;
+    width: 85%;
 }
 
 #selections {
@@ -61,8 +60,8 @@ h2 {
 }
 
 #converter {
-    width: 30rem;
-    max-width: 100%;
+    width: 80%;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,5 +170,10 @@ button:hover span:after {
 @media (max-width: 850px) {
     #inner-container {
         width: 95%;
+        min-width: none;
+    }
+    #intro {
+        width: 95%;
+        min-width: none;
     }
 }
