@@ -40,10 +40,13 @@ h2 {
 
 #acc-digits {
     margin-bottom: 0.1rem;
+    font-size: 130%;
 }
 
 #digits {
     margin-top: 0.1rem;
+    color: var(--matrix-green);
+    /* font-size: 120%; */
 }
 
 #intro {

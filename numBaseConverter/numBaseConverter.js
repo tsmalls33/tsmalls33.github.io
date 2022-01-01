@@ -9,6 +9,34 @@ let resultBox = document.querySelector("#resultBox");
 let result = document.querySelector("#result");
 let intArr = [];
 let powerNums = [];
+const alphabet = {
+    1: ["A", "a"],
+    2: ["B", "b"],
+    3: ["C", "c"],
+    4: ["D", "d"],
+    5: ["E", "e"],
+    6: ["F", "f"],
+    7: ["G", "g"],
+    8: ["H", "h"],
+    9: ["I", "i"],
+    10: ["J", "j"],
+    11: ["K", "k"],
+    12: ["L", "l"],
+    13: ["M", "m"],
+    14: ["N", "n"],
+    15: ["O", "o"],
+    16: ["P", "p"],
+    17: ["Q", "q"],
+    18: ["R", "r"],
+    19: ["S", "s"],
+    20: ["T", "t"],
+    21: ["U", "u"],
+    22: ["V", "v"],
+    23: ["W", "w"],
+    24: ["X", "x"],
+    25: ["Y", "y"],
+    26: ["Z", "z"],
+};
 
 console.log(valArrInit());
 
@@ -152,21 +180,16 @@ originBaseSelector.addEventListener("change", () => {
             break;
     }
     if (originBase <= 10) {
-        document.querySelector("#caps-warning").innerHTML = "a number";
-        document.querySelector("#digits").style.setProperty("font-size", "18px");
+        document.querySelector("#caps-warning").innerHTML = "numbers only";
+        document.querySelector("#digits").innerHTML = "0-" + valArrInit().pop();
     } else if (originBase > 10 && originBase < 26) {
-        if (originBase > 24) {
-            document.querySelector("#digits").style.setProperty("font-size", "16px");
-        } else {
-            document.querySelector("#digits").style.setProperty("font-size", "18px");
-        }
-        document.querySelector("#caps-warning").innerHTML =
-            "numbers and capital letters";
+        document.querySelector("#caps-warning").innerHTML = "numbers (and letters)";
+        document.querySelector("#digits").innerHTML =
+            "0-9, a-" + valArrInit().pop();
     } else if (originBase == 26) {
-        document.querySelector("#digits").style.setProperty("font-size", "16px");
-        document.querySelector("#caps-warning").innerHTML = "capital letters";
+        document.querySelector("#caps-warning").innerHTML = "letters only";
+        document.querySelector("#digits").innerHTML = "a-z";
     }
-    document.querySelector("#digits").innerHTML = valArrInit();
     console.log("Accepted digits: " + valArrInit());
 });
 
@@ -291,8 +314,24 @@ function valArrInit() {
             "Z",
         ];
     }
-    return validationArr;
+    return addLowerCase(validationArr);
 }
+// Function that adds lower case letters for all uppercase letters of an array
+function addLowerCase(arr) {
+    let modArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j <= 26; j++) {
+            if (arr[i] === alphabet[j][0]) {
+                modArr.push(alphabet[j][1]);
+            }
+        }
+    }
+    for (let i = 0; i < modArr.length; i++) {
+        arr.push(modArr[i]);
+    }
+    return arr;
+}
+// console.log(Object.keys(alphabet).length); // length of my object alphabet.
 
 // validation function for input number.
 function numVal(numStr, arr) {
