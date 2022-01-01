@@ -62,7 +62,7 @@ numButton.addEventListener("click", () => {
         result.style.setProperty("color", "red");
         resultBox.style.setProperty("background-color", "var(--error-red-seethru)");
         resultBox.style.setProperty("border", "2px solid var(--error-red)");
-        result.style.setProperty("font-size", "100%");
+        result.style.setProperty("font-size", "var(--converter-size)");
     } else {
         if (originBase != 10 && targetBase != 10) {
             let tempResult = completeConverter(originBase, 10, inputNum);
@@ -76,21 +76,29 @@ numButton.addEventListener("click", () => {
             "var(--matrix-green-seethru)"
         );
         resultBox.style.setProperty("border", "2px solid var(--matrix-green)");
-        if (result.innerHTML.length > 25) {
-            result.innerHTML = "Your number is too big";
-            result.style.setProperty("color", "red");
-            resultBox.style.setProperty(
-                "background-color",
-                "var(--error-red-seethru)"
-            );
-            resultBox.style.setProperty("border", "2px solid var(--error-red)");
-            result.style.setProperty("font-size", "150%");
-        } else if (result.innerHTML.length > 16) {
-            result.style.setProperty("font-size", "100%");
-        } else if (result.innerHTML.length > 10) {
-            result.style.setProperty("font-size", "150%");
+        if (targetBase == 10) {
+            if (result.innerHTML.length > 16) {
+                result.style.setProperty("font-size", "var(--focus3-size");
+            } else {
+                result.style.setProperty("font-size", "var(--focus4-size");
+            }
         } else {
-            result.style.setProperty("font-size", "250%");
+            if (result.innerHTML.length > 25) {
+                result.innerHTML = "Your number is too big";
+                result.style.setProperty("color", "red");
+                resultBox.style.setProperty(
+                    "background-color",
+                    "var(--error-red-seethru)"
+                );
+                resultBox.style.setProperty("border", "2px solid var(--error-red)");
+                result.style.setProperty("font-size", "var(--focus4-size");
+            } else if (result.innerHTML.length > 16) {
+                result.style.setProperty("font-size", "var(--focus-size");
+            } else if (result.innerHTML.length > 10) {
+                result.style.setProperty("font-size", "var(--focus4-size");
+            } else {
+                result.style.setProperty("font-size", "var(--focus4-size");
+            }
         }
     }
 

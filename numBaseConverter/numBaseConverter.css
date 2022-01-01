@@ -4,6 +4,12 @@
     --inner-background: hsla(0, 0%, 0%, 0.8);
     --error-red: hsla(360, 100%, 45%, 1);
     --error-red-seethru: hsla(360, 100%, 45%, 0.1);
+    --converter-size: 20px;
+    --main-size: 18px;
+    --focus-size: 22px;
+    --focus2-size: 26px;
+    --focus3-size: 30px;
+    --focus4-size: 40px;
 }
 
 body {
@@ -11,7 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: var(--main-size);
     color: whitesmoke;
     background-image: url("https://i.imgur.com/rRZzeoM.jpg");
     background-size: cover;
@@ -24,7 +30,7 @@ h1 {
 
 h2 {
     color: var(--matrix-green);
-    font-size: 1.5rem;
+    font-size: var(--focus2-size);
 }
 
 #inner-container {
@@ -40,31 +46,26 @@ h2 {
 
 #acc-digits {
     margin-bottom: 0.1rem;
-    font-size: 130%;
 }
 
 #digits {
     margin-top: 0.1rem;
     color: var(--matrix-green);
-    /* font-size: 120%; */
+    font-size: var(--focus3-size);
 }
 
 #intro {
     width: 85%;
 }
 
-#selections {
-    font-size: 1.9rem;
-}
-
 #converter p {
     margin-top: 0.1rem;
-    font-size: 1.3rem;
 }
 
 #converter {
     width: 80%;
     max-width: 30rem;
+    font-size: var(--converter-size);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +82,7 @@ select {
     background-color: var(--matrix-green-seethru);
     color: var(--matrix-green);
     text-align: center;
-    font-size: 1.2rem;
+    font-size: var(--focus-size);
 }
 
 select option {
@@ -98,7 +99,7 @@ input {
     background-color: var(--matrix-green-seethru);
     color: var(--matrix-green);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--focus2-size);
 }
 
 #caps-warning {
@@ -114,7 +115,7 @@ button {
     padding: 10px;
     transition: all 0.5s;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: var(--focus3-size);
     margin-top: 0.5rem;
 }
 
@@ -165,7 +166,7 @@ button:hover span:after {
     border: 2px solid black;
     border-radius: 1rem;
     background-color: hsla(0, 0%, 0%, 0);
-    width: 60%;
+    width: 80%;
     min-height: 5rem;
     height: fit-content;
 }
