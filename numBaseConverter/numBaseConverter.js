@@ -193,7 +193,7 @@ originBaseSelector.addEventListener("change", () => {
     } else if (originBase > 10 && originBase < 26) {
         document.querySelector("#caps-warning").innerHTML = "numbers (and letters)";
         document.querySelector("#digits").innerHTML =
-            "0-9, a-" + valArrInit().pop();
+            "0-9 | a-" + valArrInit().pop();
     } else if (originBase == 26) {
         document.querySelector("#caps-warning").innerHTML = "letters only";
         document.querySelector("#digits").innerHTML = "a-z";
