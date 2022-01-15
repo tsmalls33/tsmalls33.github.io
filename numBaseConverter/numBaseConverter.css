@@ -1,4 +1,6 @@
 :root {
+    --light-blue: hsla(179, 100%, 75%, 1);
+    --light-blue-seethru: hsla(179, 100%, 75%, 0.1);
     --matrix-green: hsla(125, 100%, 50%, 1);
     --matrix-green-seethru: hsla(125, 100%, 50%, 0.1);
     --inner-background: hsla(0, 0%, 0%, 0.8);
@@ -19,17 +21,17 @@ body {
     align-items: center;
     font-size: var(--main-size);
     color: whitesmoke;
-    background-image: url("https://i.imgur.com/rRZzeoM.jpg");
+    background-image: url("https://i.imgur.com/aUxo0Pb.jpg");
     background-size: cover;
 }
 
 h1 {
-    color: var(--matrix-green);
+    color: var(--light-blue);
     text-align: center;
 }
 
 h2 {
-    color: var(--matrix-green);
+    color: var(--light-blue);
     font-size: var(--focus2-size);
 }
 
@@ -50,7 +52,7 @@ h2 {
 
 #digits {
     margin-top: 0.1rem;
-    color: var(--matrix-green);
+    color: var(--light-blue);
     font-size: var(--focus3-size);
 }
 
@@ -71,47 +73,47 @@ h2 {
     justify-content: center;
     align-items: center;
     align-self: center;
-    border: 2px solid var(--matrix-green);
+    border: 2px solid var(--light-blue);
     border-radius: 1rem;
     padding: 0.5rem;
 }
 
 select {
-    border: 2px solid var(--matrix-green);
+    border: 2px solid var(--light-blue);
     border-radius: 1rem;
-    background-color: var(--matrix-green-seethru);
-    color: var(--matrix-green);
+    background-color: var(--light-blue-seethru);
+    color: var(--light-blue);
     text-align: center;
     font-size: var(--focus-size);
 }
 
 select option {
     background-color: black;
-    border: 1px solid var(--matrix-green);
+    border: 1px solid var(--light-blue);
 }
 
 input {
     margin-top: 0.5rem;
     width: 100%;
     padding: 10px;
-    border: 2px solid var(--matrix-green);
+    border: 2px solid var(--light-blue);
     border-radius: 1rem;
-    background-color: var(--matrix-green-seethru);
-    color: var(--matrix-green);
+    background-color: var(--light-blue-seethru);
+    color: var(--light-blue);
     text-align: center;
     font-size: var(--focus2-size);
 }
 
 #caps-warning {
-    color: var(--matrix-green);
+    color: var(--light-blue);
 }
 
 button {
     width: 100%;
-    border: 2px solid var(--matrix-green);
+    border: 2px solid var(--light-blue);
     border-radius: 1rem;
-    background-color: var(--matrix-green-seethru);
-    color: var(--matrix-green);
+    background-color: var(--light-blue-seethru);
+    color: var(--light-blue);
     padding: 10px;
     transition: all 0.5s;
     cursor: pointer;
