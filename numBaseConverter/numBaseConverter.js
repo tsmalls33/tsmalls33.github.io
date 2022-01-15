@@ -65,10 +65,19 @@ numButton.addEventListener("click", () => {
         result.style.setProperty("font-size", "var(--converter-size)");
     } else {
         if (originBase != 10 && targetBase != 10) {
-            let tempResult = completeConverter(originBase, 10, inputNum);
-            result.innerHTML = completeConverter(10, targetBase, tempResult);
+            if (targetBase === "roman") {
+                let tempResult = completeConverter(originBase, 10, inputNum);
+                result.innerHTML = convertToRoman(tempResult);
+            } else {
+                let tempResult = completeConverter(originBase, 10, inputNum);
+                result.innerHTML = completeConverter(10, targetBase, tempResult);
+            }
         } else {
-            result.innerHTML = completeConverter(originBase, targetBase, inputNum);
+            if (targetBase === "roman") {
+                result.innerHTML = convertToRoman(inputNum);
+            } else {
+                result.innerHTML = completeConverter(originBase, targetBase, inputNum);
+            }
         } // displays result in output area.
         result.style.setProperty("color", "var(--matrix-green)");
         resultBox.style.setProperty(
@@ -280,6 +289,9 @@ targetBaseSelector.addEventListener("change", () => {
         case "26":
             targetBase = 26;
             break;
+        case "roman":
+            targetBase = "roman";
+            break;
     }
 });
 
@@ -291,7 +303,7 @@ function valArrInit() {
     if (originBase < 11) {
         validationArr = countup(originBase - 1).map(String);
     } else if (originBase < 26) {
-        validationArr = numKey(countup(originBase - 1)).map(String);
+        validationArr = numKey(countup(originBase - 1), originBase).map(String);
     } else if (originBase == 26) {
         validationArr = [
             "A",
@@ -495,8 +507,8 @@ function letterKey(arr) {
 }
 
 // Converts any  numbers in our output number's array that should be letters into letters, so that the final display number will be correct with numbers and letters.
-function numKey(arr) {
-    if (targetBase < 26) {
+function numKey(arr, baseNum) {
+    if (baseNum < 26) {
         for (let i = 0; i < arr.length; i++) {
             switch (true) {
                 case arr[i] == 10:
@@ -550,7 +562,7 @@ function numKey(arr) {
             }
         }
         return arr;
-    } else if (targetBase === 26) {
+    } else if (baseNum === 26) {
         for (let i = 0; i < arr.length; i++) {
             switch (true) {
                 case arr[i] == 1:
@@ -698,7 +710,7 @@ function converter() {
             arr.unshift(inputNum % targetBase);
             inputNum = Math.floor(inputNum / targetBase);
         }
-        numKey(arr); // makes sure our array presents letters if necessary.
+        numKey(arr, targetBase); // makes sure our array presents letters if necessary.
         return arr.join(""); // Turns our array into one string, displaying final number.
     }
 }
@@ -731,7 +743,122 @@ function completeConverter(
             arr.unshift(num % outBase);
             num = Math.floor(num / outBase);
         }
-        numKey(arr); // makes sure our array presents letters if necessary.
+        numKey(arr, outBase); // makes sure our array presents letters if necessary.
         return arr.join(""); // Turns our array into one string, displaying final number.
     }
 }
+
+//********************************************ROMAN NUMERALS****************************************************************************\\
+
+const romanNums = {
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    50: "L",
+    100: "C",
+    500: "D",
+    1000: "M",
+};
+
+function convertToRoman(num, numArray = []) {
+    let multiplier = 1000;
+    if (num > 3999) {
+        return "Your number is too big! Under 3999 please!";
+    } else {
+        if (num < multiplier) {
+            romanizeFor1000(num, numArray);
+        }
+        for (let i = 1; i < 10; i++) {
+            if (num >= i * multiplier && num < (i + 1) * multiplier) {
+                if (i < 4) {
+                    for (let j = 0; j < i; j++) {
+                        numArray.push(romanNums[1 * multiplier]);
+                    }
+                }
+                romanizeFor1000(num - i * multiplier, numArray);
+            }
+        }
+        return numArray.join("");
+    }
+}
+
+function romanize10(num, numArray = []) {
+    if (Math.floor(num / 5) >= 1) {
+        if (num % 5 <= 3) {
+            numArray.push(romanNums[5]);
+            numArray.push(romanNums[num % 5]);
+        } else {
+            numArray.push(romanNums[9]);
+        }
+    } else {
+        numArray.push(romanNums[num % 5]);
+    }
+    return numArray;
+}
+
+function romanizeFor100(num, numArray = []) {
+    let multiplier = 10;
+    if (num < multiplier) {
+        romanize10(num, numArray);
+    }
+    for (let i = 1; i < 10; i++) {
+        if (num >= i * multiplier && num < (i + 1) * multiplier) {
+            if (i < 4) {
+                for (let j = 0; j < i; j++) {
+                    numArray.push(romanNums[1 * multiplier]);
+                }
+            } else if (i == 4) {
+                numArray.push(romanNums[1 * multiplier]);
+                numArray.push(romanNums[5 * multiplier]);
+            } else if (i == 5) {
+                numArray.push(romanNums[5 * multiplier]);
+            } else if (i < 9) {
+                numArray.push(romanNums[5 * multiplier]);
+                for (let j = 0; j < i - 5; j++) {
+                    numArray.push(romanNums[1 * multiplier]);
+                }
+            } else if (i == 9) {
+                numArray.push(romanNums[1 * multiplier]);
+                numArray.push(romanNums[10 * multiplier]);
+            }
+            romanize10(num - i * 10, numArray);
+        }
+    }
+    return numArray;
+}
+
+function romanizeFor1000(num, numArray = []) {
+    let multiplier = 100;
+    if (num < multiplier) {
+        romanizeFor100(num, numArray);
+    }
+    for (let i = 1; i < 10; i++) {
+        if (num >= i * multiplier && num < (i + 1) * multiplier) {
+            if (i < 4) {
+                for (let j = 0; j < i; j++) {
+                    numArray.push(romanNums[1 * multiplier]);
+                }
+            } else if (i == 4) {
+                numArray.push(romanNums[1 * multiplier]);
+                numArray.push(romanNums[5 * multiplier]);
+            } else if (i == 5) {
+                numArray.push(romanNums[5 * multiplier]);
+            } else if (i < 9) {
+                numArray.push(romanNums[5 * multiplier]);
+                for (let j = 0; j < i - 5; j++) {
+                    numArray.push(romanNums[1 * multiplier]);
+                }
+            } else if (i == 9) {
+                numArray.push(romanNums[1 * multiplier]);
+                numArray.push(romanNums[10 * multiplier]);
+            }
+            romanizeFor100(num - i * multiplier, numArray);
+        }
+    }
+    return numArray;
+}
+3;
