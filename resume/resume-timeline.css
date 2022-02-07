@@ -48,7 +48,7 @@
 /* END VARIABLES */
 
 body {
-    background-image: url("https://i.imgur.com/gpraTnr.jpg");
+    background-image: url("https://i.imgur.com/y74ezA1.jpg");
     background-size: 100% auto;
     font-size: 1.2rem;
 }
@@ -63,6 +63,12 @@ body {
     background-color: hsla(0, 0%, 0%, 0.5);
     border-radius: 1rem;
     padding: 0.4rem;
+}
+
+.selector-dropdown {
+    background-color: #fffcf0;
+    border-radius: 15px;
+    color: rgb(36, 42, 47);
 }
 
 .content-container {
