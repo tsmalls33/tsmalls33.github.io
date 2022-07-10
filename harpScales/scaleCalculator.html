@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scaleCalculator.css" type="text/css" />
+    <title>Music Scale Finder</title>
+</head>
+
+<body>
+    <div id="inner-container">
+        <div id="intro">
+            <h1 class="section-title">Music Scale Finder</h1>
+            <!-- <div id="intro-text">
+                <div id="intro-description">
+                    <p>
+                        This converter will allow you to convert any number from one base to another. The bases available are 2 through 26.
+                    </p>
+                    <p>
+                        It will also allow you to convert any number under 3999 base 10 (in any base), to roman numerals!
+                    </p>
+                </div>
+                <div id="intro-bases">
+                    <h2>What is a number base?</h2>
+                    <p>
+                        A number's base defines how many and which digits are available to express a certain number. The most common base for us humans is base 10, also called Decimal, which offers ten digits (0-9) for us to write our numbers.
+                    </p>
+                    <p>
+                        Computers however, often use the Binary base, or base 2, meaning that they only use two digits (0 and 1) to express their numbers.
+                    </p>
+                    <p>
+                        Another common base is called Hexadecimal (base 16), which allows for sixteen digits. This base, along with the other bases between 11 and 25 included, work by adding letters to the list of available digits. For base 16, those would be 0-9, and then A-F
+                        following the alphabet.
+                    </p>
+                    <p>
+                        Base 26 is another base that can be used for encryption, as it uses the 26 letters of the alphabet. This base uses no numbers, and can be used to turn words into a number.
+                    </p>
+                </div>
+            </div>
+        -->
+        </div>
+        <div class="content-box" id="scale-finder">
+            <p class="selections">
+                <select name="" id="scale_type_selector">
+            <option value="maj">Major</option>
+            <option value="minNat">Natural Minor</option>
+            <option value="majPen">Major Pentatonic</option>
+            <option value="minPen">Minor Pentatonic</option>
+            <option value="majBlu">Blues Major</option>
+            <option value="minBlu">Blues Minor</option>
+          </select>
+                <span id="select_text">scale, in the key of</span>
+                <select name="" id="root_selector">
+            <option value="C">C</option>
+            <option value="Db">Db / C#</option>
+            <option value="D">D</option>
+            <option value="Eb">Eb / D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="Gb">Gb / F#</option>
+            <option value="G">G</option>
+            <option value="Ab">Ab / G#</option>
+            <option value="A">A</option>
+            <option value="Bb">Bb / A#</option>
+            <option value="B">B</option></select
+          ><br />
+        </p>
+        <p id="acc-digits">Your scale is:</p>
+        <p id="digits"></p>
+        <p>Intervals from <span id="caps-warning">root</span> in semitones</p>
+        <p id="intervals"></p>
+        <!--
+        <div id="input-button-container">
+          <input
+            id="num_input"
+            type="text"
+            placeholder="Enter your number here"
+          />
+          <button id="convert" type="button"><span>Convert</span></button>
+        </div>
+        <p id="validation"></p>
+        <p>Your converted number is:</p> 
+        <div id="resultBox">
+          <p id="result"></p>
+        </div> -->
+      </div>
+      <h1 class="section-title">Harmonica Key Selector</h1>
+      <div class="content-box" id="harp-key-selector">
+        <p class="selections">
+          <select name="" id="key_selector">
+            <option value="C">C</option>
+            <option value="Db">Db / C#</option>
+            <option value="D">D</option>
+            <option value="Eb">Eb / D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="Gb">Gb / F#</option>
+            <option value="G">G</option>
+            <option value="Ab">Ab / G#</option>
+            <option value="A">A</option>
+            <option value="Bb">Bb / A#</option>
+            <option value="B">B</option></select
+          ><br />
+        </p>
+        <table>
+          <tr id="blow-holes-container">
+            <td class="blow-notes" id="blow1"></td>
+            <td class="blow-notes" id="blow2"></td>
+            <td class="blow-notes" id="blow3"></td>
+            <td class="blow-notes" id="blow4"></td>
+            <td class="blow-notes" id="blow5"></td>
+            <td class="blow-notes" id="blow6"></td>
+            <td class="blow-notes" id="blow7"></td>
+            <td class="blow-notes" id="blow8"></td>
+            <td class="blow-notes" id="blow9"></td>
+            <td class="blow-notes" id="blow10"></td>
+          </tr>
+          <tr id="harp-holes-container">
+            <td class="harp-holes">1</td>
+            <td class="harp-holes">2</td>
+            <td class="harp-holes">3</td>
+            <td class="harp-holes">4</td>
+            <td class="harp-holes">5</td>
+            <td class="harp-holes">6</td>
+            <td class="harp-holes">7</td>
+            <td class="harp-holes">8</td>
+            <td class="harp-holes">9</td>
+            <td class="harp-holes">10</td>
+          </tr>
+          <tr id="draw-holes-container">
+            <td class="draw-notes" id="draw1"></td>
+            <td class="draw-notes" id="draw2"></td>
+            <td class="draw-notes" id="draw3"></td>
+            <td class="draw-notes" id="draw4"></td>
+            <td class="draw-notes" id="draw5"></td>
+            <td class="draw-notes" id="draw6"></td>
+            <td class="draw-notes" id="draw7"></td>
+            <td class="draw-notes" id="draw8"></td>
+            <td class="draw-notes" id="draw9"></td>
+            <td class="draw-notes" id="draw10"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="scaleCalculator.js" language="javascript"></script>
+  </body>
+</html>
