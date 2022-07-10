@@ -1,6 +1,5 @@
 /* TO DO:
 - Add different minor scales 
-- Look into presenting harmonica holes
 
 
 */
