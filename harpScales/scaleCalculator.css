@@ -21,7 +21,7 @@ body {
     align-items: center;
     font-size: var(--main-size);
     color: whitesmoke;
-    background-image: url("https://i.imgur.com/I1JsDDu.jpg");
+    background-image: url("https://i.imgur.com/MVtbdTq.jpg");
     background-size: cover;
 }
 
@@ -143,6 +143,7 @@ table {
 
 table td {
     text-align: center;
+    width: 10%;
 }
 
 @media (max-width: 850px) {
@@ -169,5 +170,10 @@ table td {
     }
     table {
         width: 95%;
+        max-width: 100%;
+    }
+    .blow-holes,
+    .draw-holes {
+        font-size: 25px;
     }
 }
