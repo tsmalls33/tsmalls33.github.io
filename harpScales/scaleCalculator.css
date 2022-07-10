@@ -3,7 +3,7 @@
     --light-blue-seethru: hsla(179, 100%, 75%, 0.1);
     --matrix-green: hsla(125, 100%, 50%, 1);
     --matrix-green-seethru: hsla(125, 100%, 50%, 0.1);
-    --inner-background: hsla(0, 0%, 0%, 0.9);
+    --inner-background: hsla(0, 0%, 0%, 0.7);
     --error-red: hsla(360, 100%, 45%, 1);
     --error-red-seethru: hsla(360, 100%, 45%, 0.1);
     --converter-size: 20px;
@@ -21,7 +21,7 @@ body {
     align-items: center;
     font-size: var(--main-size);
     color: whitesmoke;
-    background-image: url("https://i.imgur.com/MVtbdTq.jpg");
+    background-image: url("https://i.imgur.com/qZT4SVK.jpg");
     background-size: cover;
 }
 
@@ -125,8 +125,10 @@ button {
 
 table {
     width: 80%;
+    max-width: 100%;
     border: 1.5px solid var(--light-blue);
     border-radius: 30px;
+    padding: 0.2rem 0.5rem;
 }
 
 .harp-holes {
@@ -160,10 +162,14 @@ table td {
         min-width: none;
     }
     select {
-        font-size: 20px;
+        font-size: 15px;
+        max-width: 50%;
     }
     #digits {
-        font-size: var(--focus-size);
+        font-size: 20px;
+    }
+    #intervals {
+        font-size: 20px;
     }
     #select_text {
         display: none;
@@ -172,8 +178,8 @@ table td {
         width: 95%;
         max-width: 100%;
     }
-    .blow-holes,
-    .draw-holes {
-        font-size: 25px;
+    .blow-notes,
+    .draw-notes {
+        font-size: 20px;
     }
 }
