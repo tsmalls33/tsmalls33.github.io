@@ -1,5 +1,5 @@
 /* TO DO:
-- Add different minor scales 
+- Improve coding for scale so that it follows standard and every major and minor scale contains all letters and no repeats.
 
 
 */
@@ -12,10 +12,13 @@ let root = rootSelector.value; // Defining initial/default root
 let scale = scaleSelector.value; // Defining initial/default scale
 let key = keySelector.value; // Defining initial/default key fo harp diagram
 
+// Object containing interval patterns between both blow notes and draw notes on a diatonic harmonica
 const harpIntervals = {
     blow: [0, 4, 3, 5, 4, 3, 5, 4, 3, 5],
     draw: [2, 5, 4, 3, 3, 4, 2, 3, 3, 4],
 };
+
+// Interval patterns for the available scales
 const intervals = {
     maj: [2, 2, 1, 2, 2, 2, 1],
     minNat: [2, 1, 2, 2, 1, 2, 2],
@@ -24,6 +27,8 @@ const intervals = {
     minBlu: [3, 2, 1, 1, 3, 2],
     majBlu: [2, 1, 1, 3, 2, 3],
 };
+
+// Notes at every interval in an octave, in semitones
 const notesList = [
     [1, "A"],
     [2, "Bb", "A*"],
@@ -51,10 +56,157 @@ const notesList = [
     [24, "Ab", "G*"],
 ];
 
-// Functions
+/////////////////////////////////////  EVENT LISTENERS ///////////////////////////////////////////////////////////
 
+// Gives us the first scale (C Major), the interval pattern, and the harmonica notes in key of C on page load
+window.onload = (event) => {
+    document.querySelector("#digits").innerHTML = scaleCreator();
+    document.querySelector("#intervals").innerHTML = intervals.maj.join(" - ");
+    harpNotes(key);
+    document.querySelector("#second-position").innerHTML = notify([
+        noteNumber(key) + 7,
+    ]);
+    setHarpNotes();
+};
+
+// Changes the displayed scale when user selects a different scale type from the drop down.
+scaleSelector.addEventListener("change", () => {
+    const selection = scaleSelector.value;
+    switch (selection) {
+        case "maj":
+            scale = "maj";
+            document.querySelector("#intervals").innerHTML =
+                intervals.maj.join(" - ");
+
+            break;
+        case "minNat":
+            scale = "minNat";
+            document.querySelector("#intervals").innerHTML =
+                intervals.minNat.join(" - ");
+            break;
+        case "majPen":
+            scale = "majPen";
+            document.querySelector("#intervals").innerHTML =
+                intervals.majPen.join(" - ");
+
+            break;
+        case "minPen":
+            scale = "minPen";
+            document.querySelector("#intervals").innerHTML =
+                intervals.minPen.join(" - ");
+            break;
+        case "majBlu":
+            scale = "majBlu";
+            document.querySelector("#intervals").innerHTML =
+                intervals.majBlu.join(" - ");
+            break;
+        case "minBlu":
+            scale = "minBlu";
+            document.querySelector("#intervals").innerHTML =
+                intervals.minBlu.join(" - ");
+            break;
+    }
+
+    document.querySelector("#digits").innerHTML = scaleCreator();
+});
+
+// Changes the displayed scale when user selects a different root from the dropdown.
+rootSelector.addEventListener("change", () => {
+    const selection = rootSelector.value;
+    switch (selection) {
+        case "A":
+            root = "A";
+            break;
+        case "Bb":
+            root = "Bb";
+            break;
+        case "B":
+            root = "B";
+            break;
+        case "C":
+            root = "C";
+            break;
+        case "Db":
+            root = "Db";
+            break;
+        case "D":
+            root = "D";
+            break;
+        case "Eb":
+            root = "Eb";
+            break;
+        case "E":
+            root = "E";
+            break;
+        case "F":
+            root = "F";
+            break;
+        case "Gb":
+            root = "Gb";
+            break;
+        case "G":
+            root = "G";
+            break;
+        case "Ab":
+            root = "Ab";
+            break;
+    }
+
+    document.querySelector("#digits").innerHTML = scaleCreator();
+});
+
+// Changes the harmonica notes when user selects a different key from the dropdown.
+keySelector.addEventListener("change", () => {
+    const selection = keySelector.value;
+    switch (selection) {
+        case "A":
+            key = "A";
+
+            break;
+        case "Bb":
+            key = "Bb";
+            break;
+        case "B":
+            key = "B";
+            break;
+        case "C":
+            key = "C";
+            break;
+        case "Db":
+            key = "Db";
+            break;
+        case "D":
+            key = "D";
+            break;
+        case "Eb":
+            key = "Eb";
+            break;
+        case "E":
+            key = "E";
+            break;
+        case "F":
+            key = "F";
+            break;
+        case "Gb":
+            key = "Gb";
+            break;
+        case "G":
+            key = "G";
+            break;
+        case "Ab":
+            key = "Ab";
+            break;
+    }
+    document.querySelector("#second-position").innerHTML = notify([
+        noteNumber(key) + 7,
+    ]);
+    setHarpNotes();
+});
+
+////////////////////////////////////// FUNCTIONS  ///////////////////////////////////////////////////////////////////////////
+
+// returns the blow notes and draw notes as an object when given the key in which the harmonica is in. This can probably be simplified.
 function harpNotes(key) {
-    // returns the blow notes and draw notes as an object. This can probably be simplified.
     let keyNumber = noteNumber(key);
     let notes = [];
     let currentNum = keyNumber;
@@ -109,36 +261,8 @@ function harpNotes(key) {
     return harpNotes;
 }
 
-/* function harpDrawNotes(key) {
-    let keyNumber = noteNumber(key);
-    let notes = [];
-    let currentNum = keyNumber;
-    for (let i = 0; i < harpIntervals["draw"].length; i++) {
-        currentNum += harpIntervals["draw"][i];
-        notes.push(currentNum);
-    }
-    for (let i = 0; i < notes.length; i++) {
-        if (notes[i] > 24) {
-            notes[i] -= 24;
-        }
-        if (notes[i] > 12) {
-            notes[i] -= 12;
-        }
-    }
-    let noteScale = [];
-    notes.map(function(num) {
-        for (let i = 0; i < notesList.length; i++) {
-            if (notesList[i][0] === num) {
-                noteScale.push(notesList[i][1]);
-            }
-        }
-    });
-    return noteScale.join(" - ");
-}
-*/
-
+// find the number equivalent of a note from our notesList object.
 function noteNumber(note) {
-    // find the number equivalent of a note from our notesList object
     for (let i = 0; i < notesList.length; i++) {
         if (notesList[i][1] === note) {
             return notesList[i][0];
@@ -149,8 +273,8 @@ function noteNumber(note) {
     }
 }
 
+// Crete a scale from the selected root and the selected scale type.
 function scaleCreator() {
-    // Crete a scale from the selected root and the selected scale type.
     let rootNumber = noteNumber(root);
     let scaleNumbers = [rootNumber];
     let currentNum = rootNumber;
@@ -169,6 +293,7 @@ function scaleCreator() {
     return noteScale.join(" - ");
 }
 
+// Turns an array of numbers into a string of notes seperated by a dash (A - B - C ...)
 function notify(myArray) {
     let noteScale = [];
     myArray.map(function(num) {
@@ -181,149 +306,7 @@ function notify(myArray) {
     return noteScale.join(" - ");
 }
 
-// Event Listeners
-
-window.onload = (event) => {
-    document.querySelector("#digits").innerHTML = scaleCreator();
-    document.querySelector("#intervals").innerHTML = intervals.maj.join(" - ");
-    harpNotes(key);
-    document.querySelector("#second-position").innerHTML = notify([
-        noteNumber(key) + 7,
-    ]);
-    setHarpNotes();
-};
-
-scaleSelector.addEventListener("change", () => {
-    const selection = scaleSelector.value;
-    switch (selection) {
-        case "maj":
-            scale = "maj";
-            document.querySelector("#intervals").innerHTML =
-                intervals.maj.join(" - ");
-
-            break;
-        case "minNat":
-            scale = "minNat";
-            document.querySelector("#intervals").innerHTML =
-                intervals.minNat.join(" - ");
-            break;
-        case "majPen":
-            scale = "majPen";
-            document.querySelector("#intervals").innerHTML =
-                intervals.majPen.join(" - ");
-
-            break;
-        case "minPen":
-            scale = "minPen";
-            document.querySelector("#intervals").innerHTML =
-                intervals.minPen.join(" - ");
-            break;
-        case "majBlu":
-            scale = "majBlu";
-            document.querySelector("#intervals").innerHTML =
-                intervals.majBlu.join(" - ");
-            break;
-        case "minBlu":
-            scale = "minBlu";
-            document.querySelector("#intervals").innerHTML =
-                intervals.minBlu.join(" - ");
-            break;
-    }
-
-    document.querySelector("#digits").innerHTML = scaleCreator();
-});
-
-rootSelector.addEventListener("change", () => {
-    const selection = rootSelector.value;
-    switch (selection) {
-        case "A":
-            root = "A";
-            break;
-        case "Bb":
-            root = "Bb";
-            break;
-        case "B":
-            root = "B";
-            break;
-        case "C":
-            root = "C";
-            break;
-        case "Db":
-            root = "Db";
-            break;
-        case "D":
-            root = "D";
-            break;
-        case "Eb":
-            root = "Eb";
-            break;
-        case "E":
-            root = "E";
-            break;
-        case "F":
-            root = "F";
-            break;
-        case "Gb":
-            root = "Gb";
-            break;
-        case "G":
-            root = "G";
-            break;
-        case "Ab":
-            root = "Ab";
-            break;
-    }
-
-    document.querySelector("#digits").innerHTML = scaleCreator();
-});
-
-keySelector.addEventListener("change", () => {
-    const selection = keySelector.value;
-    switch (selection) {
-        case "A":
-            key = "A";
-
-            break;
-        case "Bb":
-            key = "Bb";
-            break;
-        case "B":
-            key = "B";
-            break;
-        case "C":
-            key = "C";
-            break;
-        case "Db":
-            key = "Db";
-            break;
-        case "D":
-            key = "D";
-            break;
-        case "Eb":
-            key = "Eb";
-            break;
-        case "E":
-            key = "E";
-            break;
-        case "F":
-            key = "F";
-            break;
-        case "Gb":
-            key = "Gb";
-            break;
-        case "G":
-            key = "G";
-            break;
-        case "Ab":
-            key = "Ab";
-            break;
-    }
-    document.querySelector("#second-position").innerHTML = notify([
-        noteNumber(key) + 7,
-    ]);
-    setHarpNotes();
-});
-
+// Function placing individual notes into the html table cells that represent the harmonica on the displayed diagram.
 function setHarpNotes() {
     document.querySelector("#blow1").innerHTML = harpNotes(key)["blow"][0];
     document.querySelector("#blow2").innerHTML = harpNotes(key)["blow"][1];
@@ -346,3 +329,20 @@ function setHarpNotes() {
     document.querySelector("#draw9").innerHTML = harpNotes(key)["draw"][8];
     document.querySelector("#draw10").innerHTML = harpNotes(key)["draw"][9];
 }
+
+// Attempt to improved code for scale creation standards.
+const allNotes = ["A", "B", "C", "D", "E", "F", "G"];
+const accidentals = ["b", "#", "bb", "##"];
+
+/* Function story
+
+create an array 
+push the scale root to the array 
+push all other notes in sequence to the array using allNotes array
+
+Now we need to add accidentals when needed.
+Use notesList to find the distance in semitones between each note.
+if it is higher than needed based on scale type, add # or ##
+if it is lower than needed based on scale type, add b or bb
+
+*/
