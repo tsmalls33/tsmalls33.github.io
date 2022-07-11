@@ -31,29 +31,29 @@ const intervals = {
 // Notes at every interval in an octave, in semitones
 const notesList = [
     [1, "A"],
-    [2, "Bb", "A*"],
+    [2, "Bb", "A#"],
     [3, "B"],
     [4, "C"],
-    [5, "Db", "C*"],
+    [5, "Db", "C#"],
     [6, "D"],
-    [7, "Eb", "D*"],
+    [7, "Eb", "D#"],
     [8, "E"],
     [9, "F"],
-    [10, "Gb", "F*"],
+    [10, "Gb", "F#"],
     [11, "G"],
-    [12, "Ab", "G*"],
-    [13, "A"],
-    [14, "Bb", "A*"],
-    [15, "B"],
-    [16, "C"],
-    [17, "Db", "C*"],
-    [18, "D"],
-    [19, "Eb", "D*"],
-    [20, "E"],
-    [21, "F"],
-    [22, "Gb", "F*"],
-    [23, "G"],
-    [24, "Ab", "G*"],
+    [12, "Ab", "G#"],
+    /*[13, "A"],
+            [14, "Bb", "A#"],
+            [15, "B"],
+            [16, "C"],
+            [17, "Db", "C#"],
+            [18, "D"],
+            [19, "Eb", "D#"],
+            [20, "E"],
+            [21, "F"],
+            [22, "Gb", "F#"],
+            [23, "G"],
+            [24, "Ab", "G#"],*/
 ];
 
 /////////////////////////////////////  EVENT LISTENERS ///////////////////////////////////////////////////////////
@@ -215,6 +215,9 @@ function harpNotes(key) {
         notes.push(currentNum);
     }
     for (let i = 0; i < notes.length; i++) {
+        if (notes[i] > 36) {
+            notes[i] -= 36;
+        }
         if (notes[i] > 24) {
             notes[i] -= 24;
         }
@@ -238,6 +241,9 @@ function harpNotes(key) {
         notes.push(currentNum);
     }
     for (let i = 0; i < notes.length; i++) {
+        if (notes[i] > 36) {
+            notes[i] -= 36;
+        }
         if (notes[i] > 24) {
             notes[i] -= 24;
         }
@@ -280,6 +286,9 @@ function scaleCreator() {
     let currentNum = rootNumber;
     for (i = 0; i < intervals[scale].length; i++) {
         currentNum += intervals[scale][i];
+        if (currentNum > 12) {
+            currentNum -= 12;
+        }
         scaleNumbers.push(currentNum);
     }
     let noteScale = [];
@@ -346,3 +355,41 @@ if it is higher than needed based on scale type, add # or ##
 if it is lower than needed based on scale type, add b or bb
 
 */
+
+function newScaleCreator(root) {
+    let noteArr = [root];
+    let rootNum;
+    // finding the index of the selected root note in our allNotes array
+    for (let i = 0; i < allNotes.length; i++) {
+        if (root.split("")[0] === allNotes[i]) {
+            rootNum = allNotes.indexOf(root.split("")[0]);
+        }
+    }
+
+    // pushing the rest of the notes into the array
+    let noteNum = rootNum;
+    for (let i = 0; i < 6; i++) {
+        noteNum++;
+        if (noteNum > 6) {
+            noteNum -= 7;
+        }
+        noteArr.push(allNotes[noteNum]);
+    }
+    noteArr.push(root); // pushing the root at the end of array to display a root to root scale
+
+    // Finding position of root on our semitone notesList
+    let rootPosition;
+    for (let i = 0; i < notesList.length; i++) {
+        for (let j = 0; j < notesList[i].length; j++) {
+            if (root === notesList[i][j]) {
+                rootPosition = i;
+            }
+        }
+    }
+
+    // Finding position of next notes in our noteArr, finding distance between this and root position, determining if it is what we want.
+
+    console.log(noteArr);
+    console.log(rootNum);
+    console.log(rootPosition);
+}
