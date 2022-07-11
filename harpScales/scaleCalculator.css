@@ -1,6 +1,6 @@
 :root {
-    --light-blue: hsla(179, 100%, 75%, 1);
-    --light-blue-seethru: hsla(179, 100%, 75%, 0.1);
+    --light-blue: #fda847;
+    --light-blue-seethru: #fda84721;
     --matrix-green: hsla(125, 100%, 50%, 1);
     --matrix-green-seethru: hsla(125, 100%, 50%, 0.1);
     --inner-background: hsla(0, 0%, 0%, 0.7);
@@ -23,6 +23,8 @@ body {
     color: whitesmoke;
     background-image: url("https://i.imgur.com/qZT4SVK.jpg");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -102,6 +104,11 @@ select option {
     border: 1px solid var(--light-blue);
 }
 
+option:hover {
+    background-color: var(--light-blue);
+    color: black;
+}
+
 #caps-warning {
     color: var(--light-blue);
 }
@@ -134,7 +141,7 @@ table {
 .harp-holes {
     border: 2px solid var(--light-blue);
     color: black;
-    background-color: white;
+    background-color: rgb(255, 214, 144);
 }
 
 .blow-notes,
@@ -146,6 +153,19 @@ table {
 table td {
     text-align: center;
     width: 10%;
+}
+
+#second-position {
+    font-size: var(--focus-size);
+    color: var(--light-blue);
+}
+
+footer {
+    height: 20px;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 100px;
 }
 
 @media (max-width: 850px) {

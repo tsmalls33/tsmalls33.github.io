@@ -169,9 +169,9 @@ function scaleCreator() {
     return noteScale.join(" - ");
 }
 
-/* function notify() {
+function notify(myArray) {
     let noteScale = [];
-    scaleCreator().map(function(num) {
+    myArray.map(function(num) {
         for (let i = 0; i < notesList.length; i++) {
             if (notesList[i][0] === num) {
                 noteScale.push(notesList[i][1]);
@@ -180,7 +180,6 @@ function scaleCreator() {
     });
     return noteScale.join(" - ");
 }
-*/
 
 // Event Listeners
 
@@ -188,6 +187,9 @@ window.onload = (event) => {
     document.querySelector("#digits").innerHTML = scaleCreator();
     document.querySelector("#intervals").innerHTML = intervals.maj.join(" - ");
     harpNotes(key);
+    document.querySelector("#second-position").innerHTML = notify([
+        noteNumber(key) + 7,
+    ]);
     setHarpNotes();
 };
 
@@ -198,6 +200,7 @@ scaleSelector.addEventListener("change", () => {
             scale = "maj";
             document.querySelector("#intervals").innerHTML =
                 intervals.maj.join(" - ");
+
             break;
         case "minNat":
             scale = "minNat";
@@ -279,6 +282,7 @@ keySelector.addEventListener("change", () => {
     switch (selection) {
         case "A":
             key = "A";
+
             break;
         case "Bb":
             key = "Bb";
@@ -314,7 +318,9 @@ keySelector.addEventListener("change", () => {
             key = "Ab";
             break;
     }
-
+    document.querySelector("#second-position").innerHTML = notify([
+        noteNumber(key) + 7,
+    ]);
     setHarpNotes();
 });
 
