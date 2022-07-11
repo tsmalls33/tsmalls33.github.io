@@ -1,5 +1,5 @@
 :root {
-    --light-blue: #fda847;
+    --light-blue: #62ffac;
     --light-blue-seethru: #fda84721;
     --matrix-green: hsla(125, 100%, 50%, 1);
     --matrix-green-seethru: hsla(125, 100%, 50%, 0.1);
@@ -141,7 +141,7 @@ table {
 .harp-holes {
     border: 2px solid var(--light-blue);
     color: black;
-    background-color: rgb(255, 214, 144);
+    background-color: whitesmoke;
 }
 
 .blow-notes,
