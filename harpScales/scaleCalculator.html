@@ -16,15 +16,6 @@
         </div>
         <div class="content-box" id="scale-finder">
             <p class="selections">
-                <select name="" id="scale_type_selector">
-            <option value="maj">Major</option>
-            <option value="minNat">Natural Minor</option>
-            <option value="majPen">Major Pentatonic</option>
-            <option value="minPen">Minor Pentatonic</option>
-            <option value="majBlu">Blues Major</option>
-            <option value="minBlu">Blues Minor</option>
-          </select>
-                <span id="select_text">scale, in the key of</span>
                 <select name="" id="root_selector">
             <option value="C">C</option>
             <option value="C#">C#</option>
@@ -42,18 +33,28 @@
             <option value="A">A</option>
             <option value="A#">A#</option>
             <option value="Bb">Bb</option>
-            <option value="B">B</option></select
-          ><br />
-        </p>
-        <p id="acc-digits">Your scale is:</p>
-        <p id="scale"></p>
-        <p>Interval pattern in <span class="accent">semitones</span></p>
-        <p id="intervals"></p>
-      </div>
-      <h1 class="section-title">Harmonica Key Selector</h1>
-      <div class="content-box" id="harp-key-selector">
-        <p class="selections">
-          <select name="" id="key_selector">
+            <option value="B">B</option>
+          </select>
+                <select name="" id="scale_type_selector">
+            <option value="maj">Major</option>
+            <option value="minNat">Natural Minor</option>
+            <option value="majPen">Major Pentatonic</option>
+            <option value="minPen">Minor Pentatonic</option>
+            <option value="majBlu">Blues Major</option>
+            <option value="minBlu">Blues Minor</option>
+          </select>
+
+                <br />
+            </p>
+
+            <p id="scale"></p>
+            <p>Interval pattern in <span class="accent">semitones</span></p>
+            <p id="intervals"></p>
+        </div>
+        <h1 class="section-title">Harmonica Key Selector</h1>
+        <div class="content-box" id="harp-key-selector">
+            <p class="selections">
+                <select name="" id="key_selector">
             <option value="C">C</option>
             <option value="Db">Db / C#</option>
             <option value="D">D</option>
