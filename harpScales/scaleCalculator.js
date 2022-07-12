@@ -42,25 +42,13 @@ const notesList = [
     [10, "Gb", "F#"],
     [11, "G"],
     [12, "Ab", "G#"],
-    /*[13, "A"],
-            [14, "Bb", "A#"],
-            [15, "B"],
-            [16, "C"],
-            [17, "Db", "C#"],
-            [18, "D"],
-            [19, "Eb", "D#"],
-            [20, "E"],
-            [21, "F"],
-            [22, "Gb", "F#"],
-            [23, "G"],
-            [24, "Ab", "G#"],*/
 ];
 
 /////////////////////////////////////  EVENT LISTENERS ///////////////////////////////////////////////////////////
 
 // Gives us the first scale (C Major), the interval pattern, and the harmonica notes in key of C on page load
 window.onload = (event) => {
-    document.querySelector("#digits").innerHTML = scaleCreator();
+    document.querySelector("#digits").innerHTML = newScaleCreator(scale, root);
     document.querySelector("#intervals").innerHTML = intervals.maj.join(" - ");
     harpNotes(key);
     document.querySelector("#second-position").innerHTML = notify([
@@ -107,7 +95,7 @@ scaleSelector.addEventListener("change", () => {
             break;
     }
 
-    document.querySelector("#digits").innerHTML = scaleCreator();
+    document.querySelector("#digits").innerHTML = newScaleCreator(scale, root);
 });
 
 // Changes the displayed scale when user selects a different root from the dropdown.
@@ -152,7 +140,7 @@ rootSelector.addEventListener("change", () => {
             break;
     }
 
-    document.querySelector("#digits").innerHTML = scaleCreator();
+    document.querySelector("#digits").innerHTML = newScaleCreator(scale, root);
 });
 
 // Changes the harmonica notes when user selects a different key from the dropdown.
@@ -342,6 +330,14 @@ function setHarpNotes() {
 // Attempt to improved code for scale creation standards.
 const allNotes = ["A", "B", "C", "D", "E", "F", "G"];
 const accidentals = ["b", "#", "bb", "##"];
+const intervalsFromRoot = {
+    maj: [0, 2, 4, 5, 7, 9, 11],
+    minNat: [0, 2, 3, 5, 7, 8, 10],
+    majPen: [0, 2, 4, 7, 9],
+    minPen: [0, 3, 5, 7, 10],
+    minBlu: [0, 3, 5, 6, 7, 10],
+    majBlu: [0, 2, 3, 4, 7, 9],
+};
 
 /* Function story
 
@@ -356,7 +352,21 @@ if it is lower than needed based on scale type, add b or bb
 
 */
 
-function newScaleCreator(root) {
+function findPosition(note) {
+    let rootPosition;
+    for (let i = 0; i < notesList.length; i++) {
+        for (let j = 0; j < notesList[i].length; j++) {
+            if (note === notesList[i][j]) {
+                rootPosition = i;
+                break;
+            }
+        }
+        if (rootPosition != null) break; // line unneccessary?
+    }
+    return rootPosition;
+}
+
+function newScaleCreator(scaleType, root) {
     let noteArr = [root];
     let rootNum;
     // finding the index of the selected root note in our allNotes array
@@ -377,19 +387,73 @@ function newScaleCreator(root) {
     }
     noteArr.push(root); // pushing the root at the end of array to display a root to root scale
 
-    // Finding position of root on our semitone notesList
-    let rootPosition;
-    for (let i = 0; i < notesList.length; i++) {
-        for (let j = 0; j < notesList[i].length; j++) {
-            if (root === notesList[i][j]) {
-                rootPosition = i;
-            }
-        }
+    // taking notes out for pentatonic and blues scales
+    switch (scale) {
+        case "minPen":
+            noteArr.splice(1, 1);
+            noteArr.splice(4, 1);
+            break;
+        case "majPen":
+            noteArr.splice(3, 1);
+            noteArr.splice(5, 1);
+            break;
+        case "minBlu":
+            noteArr.splice(1, 1);
+            break;
+        case "majBlu":
+            noteArr.splice(6, 1);
+            break;
     }
 
     // Finding position of next notes in our noteArr, finding distance between this and root position, determining if it is what we want.
 
-    console.log(noteArr);
-    console.log(rootNum);
-    console.log(rootPosition);
+    for (let i = 1; i < noteArr.length; i++) {
+        if (findPosition(noteArr[i]) >= findPosition(root)) {
+            if (
+                Math.abs(findPosition(noteArr[i]) - findPosition(root)) <
+                intervalsFromRoot[scaleType][i] - 1
+            ) {
+                noteArr[i] += accidentals[3];
+            } else if (
+                Math.abs(findPosition(noteArr[i]) - findPosition(root)) >
+                intervalsFromRoot[scaleType][i] + 1
+            ) {
+                noteArr[i] += accidentals[2];
+            } else if (
+                Math.abs(findPosition(noteArr[i]) - findPosition(root)) <
+                intervalsFromRoot[scaleType][i]
+            ) {
+                noteArr[i] += accidentals[1];
+            } else if (
+                Math.abs(findPosition(noteArr[i]) - findPosition(root)) >
+                intervalsFromRoot[scaleType][i]
+            ) {
+                noteArr[i] += accidentals[0];
+            }
+        } else {
+            if (
+                12 - Math.abs(findPosition(noteArr[i]) - findPosition(root)) <
+                intervalsFromRoot[scaleType][i] - 1
+            ) {
+                noteArr[i] += accidentals[3];
+            } else if (
+                12 - Math.abs(findPosition(noteArr[i]) - findPosition(root)) >
+                intervalsFromRoot[scaleType][i] + 1
+            ) {
+                noteArr[i] += accidentals[2];
+            } else if (
+                12 - Math.abs(findPosition(noteArr[i]) - findPosition(root)) <
+                intervalsFromRoot[scaleType][i]
+            ) {
+                noteArr[i] += accidentals[1];
+            } else if (
+                12 - Math.abs(findPosition(noteArr[i]) - findPosition(root)) >
+                intervalsFromRoot[scaleType][i]
+            ) {
+                noteArr[i] += accidentals[0];
+            }
+        }
+    }
+
+    return noteArr.join(" - ");
 }
