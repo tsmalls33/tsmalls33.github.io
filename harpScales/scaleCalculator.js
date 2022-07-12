@@ -1,5 +1,6 @@
 /* TO DO:
-- Improve coding for scale so that it follows standard and every major and minor scale contains all letters and no repeats.
+- Maybe add separate options for same note value (C# and Db for example). New scale creator can handle it and it may be needed.
+- Error in Gb blues Minor scale. Maybe other similar errors due to the need for doubles of some notes in blues scales.
 
 
 */
@@ -295,6 +296,7 @@ function notify(myArray) {
     let noteScale = [];
     myArray.map(function(num) {
         for (let i = 0; i < notesList.length; i++) {
+            if (num > 12) num -= 12;
             if (notesList[i][0] === num) {
                 noteScale.push(notesList[i][1]);
             }
@@ -406,6 +408,7 @@ function newScaleCreator(scaleType, root) {
     }
 
     // Finding position of next notes in our noteArr, finding distance between this and root position, determining if it is what we want.
+    // This needs to be rewritten in a switch statement.
 
     for (let i = 1; i < noteArr.length; i++) {
         if (findPosition(noteArr[i]) >= findPosition(root)) {
