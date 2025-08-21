@@ -25,7 +25,21 @@ import Base from "../layouts/Base.astro";
         </div>
       </div>
       <div class="col visual">
-        <div class="hero-visual" aria-hidden="true">
+<div class="hero-visual round" aria-hidden="false" style="display:grid;place-items:center;padding:12px;position:relative">
+<svg class="seams-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- inner horizontal arcs -->
+    <path d="M5 34 C 26 24, 74 24, 95 34" stroke="var(--brand)" stroke-width="0.7" opacity="0.55" />
+    <path d="M5 66 C 26 76, 74 76, 95 66" stroke="var(--brand-2)" stroke-width="0.7" opacity="0.55" />
+
+    <!-- left S-curve (two cubic segments for proper basketball seam) -->
+    <path d="M28 5 C 18 22, 18 38, 28 50 C 38 62, 38 78, 28 95" stroke="var(--brand)" stroke-width="0.7" opacity="0.55" />
+
+    <!-- right S-curve (mirror) -->
+    <path d="M72 5 C 82 22, 82 38, 72 50 C 62 62, 62 78, 72 95" stroke="var(--brand-2)" stroke-width="0.7" opacity="0.55" />
+  </g>
+</svg>
+<img class="about-avatar" src="/images/profile-image.jpeg" alt="Portrait of Thomas Smallwood" />
           <div class="pulse" style="--x:35%;--y:45%"></div>
         </div>
       </div>

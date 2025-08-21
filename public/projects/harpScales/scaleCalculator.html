@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scaleCalculator.css" type="text/css" />
+    <title>Music Scale Finder</title>
+</head>
+
+<body>
+    <div id="inner-container">
+        <div id="intro">
+            <h1 class="section-title">Music Scale Finder</h1>
+        </div>
+        <div class="content-box" id="scale-finder">
+            <p class="selections">
+                <select name="" id="root_selector">
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="Db">Db</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="Eb">Eb</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="Gb">Gb</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="Ab">Ab</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="Bb">Bb</option>
+            <option value="B">B</option>
+          </select>
+                <select name="" id="scale_type_selector">
+            <option value="maj">Major</option>
+            <option value="minNat">Natural Minor</option>
+            <option value="majPen">Major Pentatonic</option>
+            <option value="minPen">Minor Pentatonic</option>
+            <option value="majBlu">Blues Major</option>
+            <option value="minBlu">Blues Minor</option>
+          </select>
+
+                <br />
+            </p>
+
+            <p id="scale"></p>
+            <p>Interval pattern in <span class="accent">semitones</span></p>
+            <p id="intervals"></p>
+        </div>
+        <h1 class="section-title">Harmonica Key Selector</h1>
+        <div class="content-box" id="harp-key-selector">
+            <p class="selections">
+                <select name="" id="key_selector">
+            <option value="C">C</option>
+            <option value="Db">Db / C#</option>
+            <option value="D">D</option>
+            <option value="Eb">Eb / D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="Gb">Gb / F#</option>
+            <option value="G">G</option>
+            <option value="Ab">Ab / G#</option>
+            <option value="A">A</option>
+            <option value="Bb">Bb / A#</option>
+            <option value="B">B</option>
+          </select>
+                <br /> 2nd Position: <span id="second-position"></span>
+            </p>
+            <table>
+                <tr id="blow-holes-container">
+                    <td class="blow-notes" id="blow1"></td>
+                    <td class="blow-notes" id="blow2"></td>
+                    <td class="blow-notes" id="blow3"></td>
+                    <td class="blow-notes" id="blow4"></td>
+                    <td class="blow-notes" id="blow5"></td>
+                    <td class="blow-notes" id="blow6"></td>
+                    <td class="blow-notes" id="blow7"></td>
+                    <td class="blow-notes" id="blow8"></td>
+                    <td class="blow-notes" id="blow9"></td>
+                    <td class="blow-notes" id="blow10"></td>
+                </tr>
+                <tr id="harp-holes-container">
+                    <td class="harp-holes">1</td>
+                    <td class="harp-holes">2</td>
+                    <td class="harp-holes">3</td>
+                    <td class="harp-holes">4</td>
+                    <td class="harp-holes">5</td>
+                    <td class="harp-holes">6</td>
+                    <td class="harp-holes">7</td>
+                    <td class="harp-holes">8</td>
+                    <td class="harp-holes">9</td>
+                    <td class="harp-holes">10</td>
+                </tr>
+                <tr id="draw-holes-container">
+                    <td class="draw-notes" id="draw1"></td>
+                    <td class="draw-notes" id="draw2"></td>
+                    <td class="draw-notes" id="draw3"></td>
+                    <td class="draw-notes" id="draw4"></td>
+                    <td class="draw-notes" id="draw5"></td>
+                    <td class="draw-notes" id="draw6"></td>
+                    <td class="draw-notes" id="draw7"></td>
+                    <td class="draw-notes" id="draw8"></td>
+                    <td class="draw-notes" id="draw9"></td>
+                    <td class="draw-notes" id="draw10"></td>
+                </tr>
+            </table>
+        </div>
+        <footer>@ 2022 - Thomas Smallwood</footer>
+    </div>
+
+    <script src="scaleCalculator.js" language="javascript"></script>
+</body>
+
+</html>

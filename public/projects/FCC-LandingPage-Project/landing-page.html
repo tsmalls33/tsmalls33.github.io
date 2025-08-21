@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>FreeCodeCamp Landing Page Project</title>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="landing-page.css" type="text/css">
+</head>
+
+
+<body>
+    <header id="header">
+        <img id="header-img" alt="Coffee Beans Delivered company logo" src="https://i.imgur.com/UejNkSy.png">
+        <nav id="nav-bar">
+            <a href="#video" class="nav-link">Video</a>
+            <a href="#why" class="nav-link">Why?</a>
+            <a href="#submit" class="nav-link">Let's do it!</a>
+
+
+        </nav>
+    </header>
+    <div id="content-container">
+        <div id="headline" class="main-content">
+            <h1>Unlock your coffee's full potential</h1>
+            <p>Don't feed "fast-coffee" to your expensive espresso machine... </p>
+        </div>
+        <iframe id="video" width="600" height="450" class="main-content" src="https://www.youtube.com/embed/-qt5kew-Rew?autoplay=1&mute=1" allowfullscreen>
+        </iframe>
+
+        <div id="why" class="main-content">
+            <div id="reason1">
+                <i class="fas fa-mug-hot fa-3x"></i>
+                <h2>Fresh coffee </h2>
+                <p>Ground coffee gets altered by oxygen, light, temperature, moisture, and many more factors. In as little as a few days, that can deteriorate the flavor of your daily drink. Grinding your own beans right before brewing will transform your
+                    coffee!
+                </p>
+            </div>
+            <div id="reason4">
+                <i class="fas fa-fingerprint fa-3x"></i>
+                <h2>Customize your coffee</h2>
+                <p>Looking for the perfect espresso? Aren't we all... A burr coffee grinder will allow you not only to achieve a <em>consistent</em> grind, but also fine-tune your grind size to what YOU like, improving your coffee and getting closer to that
+                    perfect sip with every brew.</p>
+            </div>
+            <div id="reason2">
+                <i class="fas fa-chart-line fa-3x"></i>
+                <h2>Full Potential </h2>
+                <p>You have a great coffee machine, whether it is an espresso machine or any other brewing method. GREAT! However, do you feel bad putting store-bought, pre-ground coffee into it? Invest a fraction of your coffee machine's price into a burr
+                    grinder to unlock its full potential!</p>
+            </div>
+            <div id="reason3">
+                <i class="fas fa-hand-holding-usd fa-3x"></i>
+                <h2>Save money</h2>
+                <p>Because whole coffee beans preserve for much longer, you will be able to purchase larger quantities of beans at once, for a fraction of the price, and much higher quality.</p>
+            </div>
+
+        </div>
+        <form action="https://www.freecodecamp.com/email-submit" id="form" class="main-content">
+            <input type="email" name="email" id="email" placeholder="Enter your email"><br>
+            <Button type="submit" id="submit">I want one!</Button>
+
+        </form>
+        <p id="no-share">Your privacy matters to us, we will not share your information.</p>
+    </div>
+    <script>
+        document.querySelector('button').onclick = function displayOnly() {
+            alert("This page is display only. If it convinced you to get a coffee grinder, tell me about it via email... and then go to Amazon. ;)");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FreeCodeCamp Survey form project</title>
+    <script src="https://kit.fontawesome.com/c7ec7cd4a2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <link rel="stylesheet" href="fcc-survey-form.css" type="text/css" media="screen" />
+</head>
+
+<body>
+    <div class="outer-container">
+        <div class="inner-container">
+            <header>
+                <h1 id="title">Thank you for your time!</h1>
+                <p id="description">
+                    This is a survey about my portfolio website you were just on. This website is very important for the development of my career. Therefore, thank you for visiting it and for clicking this survey link. It would help me greatly if you were to take a few extra
+                    moments to tell me a little bit more about yourself and give me some feedback on your experience. <br /> Have a great day!
+                </p>
+                <i class="far fa-smile fa-4x"></i>
+            </header>
+            <form action="#" id="survey-form">
+                <div class="text-entries">
+                    <label for="name" id="name-label">Name: </label><br />
+                    <input type="text" placeholder="Name" id="name" required /><br />
+                    <label for="email" id="email-label">E-mail: </label><br />
+                    <input type="email" placeholder="Email address" id="email" required /><br />
+                    <label for="current-situation" id="label-current-situation">What is your current situation?</label
+            ><br />
+            <input
+              type="text"
+              id="current-situation"
+              placeholder="Situation"
+              list="dropdown1"
+            />
+            <datalist id="dropdown1">
+              <option value="Student"></option>
+              <option value="Employer"></option>
+              <option value="Employee"></option>
+              <option value="Other"></option></datalist
+            ><br />
+
+            <label for="favorite-project" id="label-favorite-project"
+              >What is your favorite project of mine?</label
+            ><br />
+            <input
+              type="text"
+              id="favorite-project"
+              placeholder="Make your pick"
+              list="dropdown2"
+            />
+            <datalist id="dropdown2">
+              <option value="Kobe Bryant tribute page"></option>
+              <option value="Keychron K2 Technical Documentation"></option>
+              <option value="Coffee grinder landing page"></option>
+              <option value="The portfolio page itself"></option>
+              <option value="This survey form"></option>
+              <option value="I don't like any"></option></datalist
+            ><br />
+          </div>
+          <div class="radio-section">
+            <div id="proficiency-level">
+              <h2>
+                How would you describe your current level of proficiency in
+                software development?
+              </h2>
+              <label for="begginer"
+                ><input
+                  type="radio"
+                  id="begginer"
+                  name="proficiency-level"
+                  value="begginer"
+                />Begginer</label
+              ><br />
+              <label for="intermediate"
+                ><input
+                  type="radio"
+                  id="intermediate"
+                  name="proficiency-level"
+                  value="intermediate"
+                />Intermediate</label
+              ><br />
+              <label for="advanced"
+                ><input
+                  type="radio"
+                  id="advanced"
+                  name="proficiency-level"
+                  value="advanced"
+                />Advanced</label
+              ><br />
+              <label for="expert" id="expert-label"
+                ><input
+                  type="radio"
+                  id="expert"
+                  name="proficiency-level"
+                  value="expert"
+                />Expert</label
+              ><br />
+            </div>
+            <div id="experience-years">
+              <h2>
+                How many years have you worked in the software development
+                field?
+              </h2>
+              <label for="0-5"
+                ><input
+                  type="radio"
+                  id="0-5"
+                  name="experience-years"
+                  value="0-5"
+                />0-5</label
+              ><br />
+              <label for="5-10"
+                ><input
+                  type="radio"
+                  id="5-10"
+                  name="experience-years"
+                  value="5-10"
+                />5-10</label
+              ><br />
+              <label for="10-more"
+                ><input
+                  type="radio"
+                  id="10-more"
+                  name="experience-years"
+                  value="10-more"
+                />10 or more</label
+              ><br />
+            </div>
+          </div>
+          <h2>
+            Select the words you would use to describe my website (select as
+            many as you want):
+          </h2>
+          <div class="checkbox-section">
+            <div id="check-left">
+              <input type="checkbox" id="clear" value="clear" />
+              <label for="clear">Clear</label><br />
+                    <input type="checkbox" id="visually-pleasing" value="visually pleasing" />
+                    <label for="visually-pleasing">Visually pleasing</label><br />
+                    <input type="checkbox" id="easy-to-navigate" value="easy to navigate" />
+                    <label for="easy-to-navigate">Easy to navigate</label><br />
+                </div>
+                <div id="check-right">
+                    <input type="checkbox" id="professional" value="professional" />
+                    <label for="professional">Professional</label><br />
+                    <input type="checkbox" id="informative" value="informative" />
+                    <label for="informative">Informative</label><br />
+                    <!-- <input type="checkbox" id="informative" value="informative">
+                        <label for="informative">Informative</label><br> -->
+                </div>
+        </div>
+        <label class="text-entries" for="number" id="number-label">Please rate my website out of 10: </label
+          ><br />
+          <input
+            class="text-entries"
+            type="number"
+            placeholder="1-10"
+            id="number"
+            min="1"
+            max="10"
+          /><br />
+          <textarea
+            id="additional-comments"
+            cols="60"
+            rows="10"
+            placeholder="Please feel free to include any additional comments or recommendations."
+          ></textarea
+          ><br />
+          <button id="submit" type="submit" name="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.querySelector("button").onclick = function displayOnly() {
+        alert(
+          "This form is display only. If you would like to send me feedback, please send me an email because I would love to hear about it."
+        );
+      };
+    </script>
+  </body>
+</html>
