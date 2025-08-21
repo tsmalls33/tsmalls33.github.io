@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Contact – Thomas Smallwood" description="Get in touch.">
+  <div class="container">
+    <section class="section" aria-labelledby="contact-title">
+      <h1 id="contact-title" class="h1">Contact</h1>
+      <div class="contact">
+        <form class="card" onsubmit="event.preventDefault(); window.location.href='mailto:tbm.smallwood@gmail.com';">
+          <label>
+            <span class="small">Your Name</span>
+            <input class="input" type="text" name="name" placeholder="Jane Doe" required />
+          </label>
+          <label>
+            <span class="small">Your Email</span>
+            <input class="input" type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span class="small">Message</span>
+            <textarea class="textarea" name="message" placeholder="Say hello..." required></textarea>
+          </label>
+          <div class="actions">
+            <button class="button primary" type="submit">Send</button>
+          </div>
+        </form>
+        <div class="card">
+          <p><strong>Links</strong></p>
+          <p><a class="button" href="https://www.linkedin.com/in/thomas-smallwood/" target="_blank" rel="noopener">LinkedIn</a></p>
+          <p><a class="button" href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a></p>
+          <p><a class="button" href="mailto:tbm.smallwood@gmail.com">tbm.smallwood@gmail.com</a></p>
+          <p><a class="button" href="https://wa.me/34694288334" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p><a class="button" href="/resume/resume-timeline.html">Resume</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

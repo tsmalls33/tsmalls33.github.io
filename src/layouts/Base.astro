@@ -1,5 +1,6 @@
 ---
-const { title = 'Thomas Smalls — Web Developer', description = 'Building modern, performant web experiences', } = Astro.props;
+import ThemeToggle from "../components/ThemeToggle";
+const { title = 'Thomas Smallwood – Software Engineer', description = 'Building modern, performant web experiences', } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -12,23 +13,33 @@ const { title = 'Thomas Smalls — Web Developer', description = 'Building moder
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/global.css" />
     <title>{title}</title>
+    <script>
+      try {
+        const pref = localStorage.getItem('theme')
+          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', pref);
+      } catch {}
+    </script>
   </head>
   <body>
     <header class="site-header">
-      <a href="/" class="logo">TS</a>
+      <a href="/" class="logo" aria-label="Home">TS</a>
       <nav class="nav">
         <a href="/" aria-current="page">Home</a>
-        <a href="/resume/resume-timeline.html">Resume</a>
-        <a href="/#projects">Projects</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
+        <a href="/resume">Resume</a>
         <a href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a>
       </nav>
+      <ThemeToggle client:load />
     </header>
     <main>
       <slot />
     </main>
     <footer class="site-footer">
       <p>
-        © {new Date().getFullYear()} Thomas Smalls. Built with Astro + React.
+        © {new Date().getFullYear()} Thomas Smallwood. Built with Astro + React. Let’s build something great together.
       </p>
     </footer>
   </body>

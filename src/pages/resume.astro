@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import Timeline from "../components/Timeline";
+import ResumeViewer from "../components/ResumeViewer";
+---
+<Base title="Resume – Thomas Smallwood" description="Interactive resume timeline and downloadable PDF resume.">
+  <div class="container">
+    <section class="section" aria-labelledby="resume-title">
+      <h1 id="resume-title" class="h1">Resume</h1>
+
+      <div class="resume-grid">
+        <div class="resume-timeline card">
+          <h2>Timeline</h2>
+          <p class="small">Click items to expand details.</p>
+          <Timeline client:load />
+        </div>
+        <div class="resume-pdf card">
+          <h2>PDF</h2>
+          <ResumeViewer client:load />
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

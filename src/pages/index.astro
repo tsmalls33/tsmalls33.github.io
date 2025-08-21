@@ -1,56 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
-import Typewriter from "../components/Typewriter";
 ---
-<Base title="Thomas Smallwood — Web Developer" description="Modern, professional web experiences with a focus on performance and quality.">
+<Base title="Thomas Smallwood – Software Engineer" description="From the basketball court to the code editor — building scalable, real‑world applications with discipline, teamwork, and energy.">
   <div class="container">
-    <section class="hero" aria-labelledby="intro-title">
-      <div>
-        <span class="badge">Available for work</span>
-        <h1 id="intro-title" class="h1">Hi, I'm Thomas — I build fast, accessible web apps.</h1>
-        <p class="lead">Motivated full‑stack developer with a passion for clean design, clear UX, and performance. I enjoy turning ideas into production‑ready, maintainable software.</p>
-        <div class="actions">
-          <a class="button primary" href="/resume/Hellbender Conservation Program - MPA Capstone project 2019.pdf" target="_blank" rel="noopener">View Resume (PDF)</a>
-          <a class="button" href="#projects">Explore Projects</a>
-          <a class="button" href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <p style="margin-top:14px;color:var(--muted)"><strong><Typewriter client:load /></strong></p>
-      </div>
-      <div class="hero-visual" id="viz">
-        <div class="pulse" id="pulse"></div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <div class="card-grid">
-        <a class="card" href="/FCC-LandingPage-Project/landing-page.html">
-          <h3>Landing Page</h3>
-          <p>Responsive marketing layout.</p>
-        </a>
-        <a class="card" href="/numBaseConverter/numBaseConverter.html">
-          <h3>Number Base Converter</h3>
-          <p>Interactive tool with vanilla JS.</p>
-        </a>
-        <a class="card" href="/resume/resume-timeline.html">
-          <h3>Resume Timeline</h3>
-          <p>A quick overview of my experience.</p>
-        </a>
+    <section class="landing" aria-labelledby="intro-title">
+      <h1 id="intro-title" class="display">Thomas Smallwood – Software Engineer</h1>
+      <p class="tagline">From the basketball court to the code editor — building scalable, real‑world applications with discipline, teamwork, and energy.</p>
+      <div class="actions">
+        <a class="button primary" href="/projects">Projects</a>
+        <a class="button" href="/about">About</a>
+        <a class="button" href="/contact">Contact</a>
       </div>
     </section>
   </div>
-
-  <script>
-    const viz = document.getElementById('viz');
-    const pulse = document.getElementById('pulse');
-    if (viz && pulse) {
-      viz.addEventListener('pointermove', (e) => {
-        const rect = viz.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        pulse.style.setProperty('--x', x + '%');
-        pulse.style.setProperty('--y', y + '%');
-      });
-    }
-  </script>
 </Base>
