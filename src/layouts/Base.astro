@@ -1,0 +1,35 @@
+---
+const { title = 'Thomas Smalls — Web Developer', description = 'Building modern, performant web experiences', } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="logo">TS</a>
+      <nav class="nav">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/resume/resume-timeline.html">Resume</a>
+        <a href="/#projects">Projects</a>
+        <a href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        © {new Date().getFullYear()} Thomas Smalls. Built with Astro + React.
+      </p>
+    </footer>
+  </body>
+</html>
