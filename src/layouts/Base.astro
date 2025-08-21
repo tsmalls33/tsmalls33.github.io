@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from "../components/ThemeToggle";
+import "../styles/global.css";
 const { title = 'Thomas Smallwood – Software Engineer', description = 'Building modern, performant web experiences', } = Astro.props;
 ---
 <!doctype html>
@@ -11,7 +12,6 @@ const { title = 'Thomas Smallwood – Software Engineer', description = 'Buildin
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <title>{title}</title>
     <script>
       try {
