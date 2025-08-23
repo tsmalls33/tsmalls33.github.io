@@ -14,6 +14,15 @@ const groups: Group[] = [
     period: '2022 – Present',
     entries: [
       {
+        title: 'Devomart Inmobiliaria — Backend Engineer (Barcelona)',
+        period: '2024 – Present',
+        bullets: [
+          { text: 'Creating Google Apps Scripts to streamline company flows.' },
+          { text: 'Automations to improve property management efficiency and quality.' },
+          { text: 'Active participation in team meetings and technical discussions.' },
+        ],
+      },
+      {
         title: 'Real Estate Management Platform',
         period: '2025 – Present',
 bullets: [
