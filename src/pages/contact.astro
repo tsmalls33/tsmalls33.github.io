@@ -54,6 +54,32 @@ import Base from "../layouts/Base.astro";
           if (el) el.hidden = false;
         }
       } catch (e) {}
+
+      // Ensure consistent redirect on all devices/browsers by posting to a hidden iframe
+      // and controlling the visible-page redirect ourselves.
+      try {
+        const form = document.querySelector('form.card');
+        if (form && form.action && form.method && form.method.toUpperCase() === 'POST') {
+          const iframeName = 'formsubmit_iframe';
+          let iframe = document.querySelector(`iframe[name="${iframeName}"]`);
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.name = iframeName;
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+          }
+          form.setAttribute('target', iframeName);
+          form.addEventListener('submit', function () {
+            try {
+              const btn = form.querySelector('button[type="submit"]');
+              if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+            } catch {}
+            setTimeout(function () {
+              window.location.href = 'https://tsmalls33.github.io/contact?success=1';
+            }, 300);
+          });
+        }
+      } catch (e) {}
     })();
   </script>
 
