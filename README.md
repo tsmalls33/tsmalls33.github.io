@@ -22,6 +22,18 @@ This portfolio highlights selected projects, experiments, and writing. Expect:
 - React for interactive components
 - Deployed on GitHub Pages
 
+## Contact form
+
+The contact page uses formsubmit.co to send messages directly to my inbox (tbm.smallwood@gmail.com) without a custom backend, which works well on GitHub Pages.
+
+- The form posts to: https://formsubmit.co/tbm.smallwood@gmail.com
+- A honeypot field (_honey) is included to reduce spam.
+- Captcha is disabled for smoother UX; remove the `_captcha=false` input to enable reCAPTCHA.
+- Successful submissions redirect to `/contact?success=1`, which displays a success banner.
+- The first time a message is sent, formsubmit will email you to verify forwarding; approve once and you’re set.
+
+If you prefer a dedicated backend (e.g., serverless function with SendGrid or Nodemailer), add it and update the form `action` accordingly.
+
 ## Development
 Want to run it locally?
 

@@ -5,8 +5,19 @@ import Base from "../layouts/Base.astro";
   <div class="container">
     <section class="section" aria-labelledby="contact-title">
       <h1 id="contact-title" class="h1">Contact</h1>
+      <div id="success-banner" class="success-banner" hidden role="status" aria-live="polite">
+        Thanks! Your message has been sent. I’ll get back to you soon.
+      </div>
       <div class="contact">
-        <form class="card" onsubmit="event.preventDefault(); window.location.href='mailto:tbm.smallwood@gmail.com';">
+        <form class="card" action="https://formsubmit.co/tbm.smallwood@gmail.com" method="POST">
+          <!-- Honeypot field to reduce spam -->
+          <input type="text" name="_honey" style="display:none" />
+          <!-- Disable Captcha for a smoother UX; remove to enable reCAPTCHA -->
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Optional: subject and redirect after submit -->
+          <input type="hidden" name="_subject" value="New message from thomas-smallwood.dev contact form" />
+          <input type="hidden" name="_next" value="/contact?success=1" />
+
           <label>
             <span class="small">Your Name</span>
             <input class="input" type="text" name="name" placeholder="Jane Doe" required />
@@ -29,9 +40,33 @@ import Base from "../layouts/Base.astro";
           <p><a class="button" href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a></p>
           <p><a class="button" href="mailto:tbm.smallwood@gmail.com">tbm.smallwood@gmail.com</a></p>
           <p><a class="button" href="https://wa.me/34694288334" target="_blank" rel="noopener">WhatsApp</a></p>
-          <p><a class="button" href="/resume/resume-timeline.html">Resume</a></p>
         </div>
       </div>
     </section>
   </div>
+
+  <script>
+    (function () {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('success') === '1') {
+          const el = document.getElementById('success-banner');
+          if (el) el.hidden = false;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    .success-banner {
+      border: 1px solid #2e7d32;
+      background: #1b5e20;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin: 0 0 1rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-size: 0.95rem;
+    }
+  </style>
 </Base>
