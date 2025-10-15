@@ -34,6 +34,23 @@ const { pathname } = Astro.url;
         <a href="https://github.com/tsmalls33" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <ThemeToggle client:load />
+
+      <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+          const links = document.querySelectorAll('.nav a');
+          const currentPath = window.location.pathname;
+          links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href !== '/' && currentPath.startsWith(href)) {
+              link.setAttribute('aria-current', 'page');
+            } else if (href === '/' && currentPath === '/') {
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        });
+      </script>
     </header>
     <main>
       <slot />
